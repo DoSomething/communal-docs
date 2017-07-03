@@ -8,3 +8,6 @@ This repository houses documentation that can be shared across other DoSomething
 
 Simply link to a specified documentation file in this repository from another DoSomething.org's project README file.
 
+<br />
+
+<p align="center">©2017 DoSomething.org.</p>

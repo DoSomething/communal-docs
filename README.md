@@ -10,4 +10,4 @@ Simply link to a specified documentation file in this repository from another Do
 
 <br />
 
-<p align="center">©2017 DoSomething.org.</p>
+<p align="center"><small>©2017 DoSomething.org.</small></p>

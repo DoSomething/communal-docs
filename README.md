@@ -1,2 +1,6 @@
-# communal-docs
-Documentation that is shared across various DoSomething.org repositories.
+<p align="center">
+  <img alt="documentation shelf icon" src="">
+</p>
+
+<p align="center">Communal Docs</p>
+

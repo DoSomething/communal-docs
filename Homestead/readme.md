@@ -17,7 +17,7 @@ Download and install the latest version of [Vagrant](https://www.vagrantup.com/d
 ### Step 3: Install Homestead
 To install Homestead, first clone the [respository](https://github.com/laravel/homestead) to your main code directory, the _home_ directory, or a directory location of your choice. 
 
-These instuctions assume a local `Code` directory within a _home_ directory (i.e. `~/Code`), that houses all code repositories for the various DoSomething projects, but feel free to locate where your heart desires and adjust the command paths accordingly.
+These instructions assume a local `Code` directory within a _home_ directory (i.e. `~/Code`), that houses all code repositories for the various DoSomething projects, but feel free to locate where your heart desires and adjust the command paths accordingly.
 
 ```shell
 $ cd ~/Code
@@ -110,7 +110,7 @@ The `folder` key in the `Homestead.yaml` file will `map` the local directory spe
 Use the `sites` key to map your DoSomething project "domain" to a folder on your Homestead environment. Make sure to point to the `/public` folder for each project you add.
 
 ### Step 2: Configure /etc/hosts
-For each of the sites specified in the `Homestead.yaml` file, you need to add those "domains" to the `/etc/hosts` file on you local machine. The `hosts` file will redirect requests for the specified project "domains" into your Homestead machine.
+For each of the sites specified in the `Homestead.yaml` file, you need to add those "domains" to the `/etc/hosts` file on your local machine. The `hosts` file will redirect requests for the specified project "domains" into your Homestead machine.
 
 <details>
 <summary><strong>Example /etc/hosts</strong></summary>
@@ -151,7 +151,6 @@ http://phoenix.dev
 
 
 ## Usage
-
 You can start the virtual machine, head into the directory for the Homestead repository and run:
 
 ```shell
@@ -160,11 +159,11 @@ $ cd ~/Code/homestead
 $ vagrant up
 ```
 
-Vagrant wil boot the virtual machine and automatically provision the box based on the configurations specified in the `Homestead.yaml` file.
+Vagrant will boot the virtual machine and automatically provision the box based on the configurations specified in the `Homestead.yaml` file.
 
 **There's a better way!™**
 
-Instead of having to change directories from a specific project, over to the Homestead repository directory to launch the Vagrant machine (or execute other Vagrant commands), it is recommended to set up an custom bash function that will allow you to run commands on the Homestead vagrant box from anywhere in your filesystem.
+Instead of having to change directories from a specific project, over to the Homestead repository directory to launch the Vagrant machine (or execute other Vagrant commands), it is recommended to set up a custom bash function that will allow you to run commands on the Homestead vagrant box from anywhere in your filesystem.
 
 Add the following function to either your `.bashrc` or `.bash_profile`:
 
@@ -179,3 +178,9 @@ Make sure the path to the homestead repository (`~/Code/homestead`) matches what
 To register the function, either open a new terminal window or run `source ~/.bashrc` or `source ~/.bash_profile`.
 
 This function will now allow you to run any of the vagrant commands as `homestead up`, `homestead ssh` or `homestead halt` etc., from anywhere on your system.
+
+
+
+## Troubleshooting
+If you encounter any issues while installing and setting up Homestead, please refer to the [troubleshooting guide](troubleshooting.md).
+

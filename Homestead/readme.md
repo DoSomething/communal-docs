@@ -63,12 +63,15 @@ folders:
 sites:
     - map: northstar.app
       to: /home/vagrant/Code/northstar/public
+      php: "7.0"
 
     - map: phoenix.dev
       to: /home/vagrant/Code/phoenix-next/public
+      php: "7.0"
     
     - map: rogue.dev
       to: /home/vagrant/Code/rogue/public
+      php: "7.0"
 
 # These databases will automatically be created by
 # Homestead when provisioning your virtual machine.

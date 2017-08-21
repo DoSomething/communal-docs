@@ -108,7 +108,7 @@ Finally, make one change to the `after.sh` file:
 # be run after the Homestead machine is provisioned.
 
 # Use PHP 7.0 for the CLI.
-ln -sf /usr/bin/php7.0 /etc/alternatives/php
+sudo ln -sf /usr/bin/php7.0 /etc/alternatives/php
 ```
 
 #### Step 4: Configure /etc/hosts

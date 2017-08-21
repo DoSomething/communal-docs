@@ -37,12 +37,15 @@ ip: "192.168.10.10"
 memory: 2048
 cpus: 1
 provider: virtualbox
-mongodb: true
 
 authorize: ~/.ssh/id_rsa.pub
 
 keys:
     - ~/.ssh/id_rsa
+
+# Install MongoDB. If you're not working on
+# Northstar, you can set this to `false`.
+mongodb: true
 
 # Configure which folders on your local machine
 # are accessible on the Homestead VM. This should

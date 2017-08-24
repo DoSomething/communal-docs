@@ -1,23 +1,16 @@
 # Homestead Setup
 
+__Laravel Homestead is an official, pre-packaged Vagrant box that provides you a wonderful development environment without requiring you to install PHP, a web server, and any other server software on your local machine.__ We use it to ensure everyone on the team has a consistent environment & can get up and running quickly!
 
-_Please refer to the official [Homestead documentation](https://laravel.com/docs/master/homestead) for further information._
-
+_Here's a "quick start" guide to using Homestead. Refer to the [official documentation](https://laravel.com/docs/master/homestead) for more information._ :books:
 
 ## Installation
-Before you can get started using Homestead to work on our various DoSomething projects built using Laravel, you need to install a few items.
 
+#### Step 1: Install VirtualBox & Vagrant
+Download and install the latest version of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [Vagrant](https://www.vagrantup.com/downloads.html).
 
-### Step 1: Install VirtualBox
-Download and install the latest version of [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
-
-### Step 2: Install Vagrant
-Download and install the latest version of [Vagrant](https://www.vagrantup.com/downloads.html).
-
-### Step 3: Install Homestead
-To install Homestead, first clone the [respository](https://github.com/laravel/homestead) to your main code directory, the _home_ directory, or a directory location of your choice. 
-
-These instructions assume a local `Code` directory within a _home_ directory (i.e. `~/Code`), that houses all code repositories for the various DoSomething projects, but feel free to locate where your heart desires and adjust the command paths accordingly.
+#### Step 2: Install Homestead
+To install Homestead, first clone the [repository](https://github.com/laravel/homestead) to wherever you store your source code (or any other location of your choice). These instructions assume you're storing your projects in `~/Code`.
 
 ```shell
 $ cd ~/Code
@@ -25,28 +18,18 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-It is recommended to check out the [latest tagged version](https://github.com/laravel/homestead/releases) of Homestead since the `master` branch may not always be stable.
+Check out the [latest tagged release](https://github.com/laravel/homestead/releases) of Homestead, since the `master` branch may not always be stable.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v5.4.0
+$ git checkout v6.1.0
 ```
 
-### Step 4: Initialize Homestead
-Next, run the `bash init.sh` command from within the Homestead directory, which will create the `Homestead.yaml` configuration file.
+#### Step 3: Configure Homestead
+Next, run the `bash init.sh` command from within the Homestead directory, which will create the `Homestead.yaml` configuration file & `after.sh` shell script.
 
-
-
-## Setup
-Once Homestead is initialized, and a `Homestead.yaml` file has been created in the main Homestead repository, you need to configure the file.
-
-
-### Step 1: Configure Homestead.yaml
-Use the following example `Homestead.yaml` to configure your YAML file:
-
-<details>
-<summary><strong>Example Homestead.yaml</strong></summary>
+You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix Next](https://github.com/dosomething/phoenix-next), and [Rogue](https://github.com/dosomething/rogue):
 
 ```yaml
   ---
@@ -54,39 +37,52 @@ ip: "192.168.10.10"
 memory: 2048
 cpus: 1
 provider: virtualbox
-mongodb: true
 
 authorize: ~/.ssh/id_rsa.pub
 
 keys:
     - ~/.ssh/id_rsa
 
+# Install MongoDB. If you're not working on
+# Northstar, you can set this to `false`.
+mongodb: true
+
+# Configure which folders on your local machine
+# are accessible on the Homestead VM. This should
+# include an entry for whichever folders you store
+# your source code in.
+#
+#  - map: <PATH ON YOUR MAC/PC>
+#    to: <PATH ON YOUR VAGRANT BOX>
+#
 folders:
     - map: ~/Code
       to: /home/vagrant/Code
 
+# Configure which Laravel applications you are running,
+# and where their "public" directory can be found. Make
+# sure the 'to' path begins with one of the folders
+# you linked above.
 sites:
-    - map: gladiator.dev
-      to: /home/vagrant/Code/gladiator/public
-
-    - map: longshot.dev
-      to: /home/vagrant/Code/longshot/public
-
     - map: northstar.app
       to: /home/vagrant/Code/northstar/public
+      php: "7.0"
 
     - map: phoenix.dev
-      to: /home/vagrant/Code/phoenix/public
+      to: /home/vagrant/Code/phoenix-next/public
+      php: "7.0"
     
     - map: rogue.dev
       to: /home/vagrant/Code/rogue/public
+      php: "7.0"
 
+# These databases will automatically be created by
+# Homestead when provisioning your virtual machine.
 databases:
-    - gladiator
-    - longshot
-    - northstar
     - phoenix
+    - phoenix_test
     - rogue
+    - rogue_test
 
 # blackfire:
 #     - id: foo
@@ -100,22 +96,25 @@ databases:
 #     - send: 7777
 #       to: 777
 #       protocol: udp
-
 ```
 
-</details>
+Finally, make one change to the `after.sh` file:
 
-The `folder` key in the `Homestead.yaml` file will `map` the local directory specified `to` the specified path on the virtual machine.
+```shell
+#!/bin/sh
 
-Use the `sites` key to map your DoSomething project "domain" to a folder on your Homestead environment. Make sure to point to the `/public` folder for each project you add.
+# If you would like to do some extra provisioning you may
+# add any commands you wish to this file and they will
+# be run after the Homestead machine is provisioned.
 
-### Step 2: Configure /etc/hosts
-For each of the sites specified in the `Homestead.yaml` file, you need to add those "domains" to the `/etc/hosts` file on your local machine. The `hosts` file will redirect requests for the specified project "domains" into your Homestead machine.
-
-<details>
-<summary><strong>Example /etc/hosts</strong></summary>
-
+# Use PHP 7.0 for the CLI.
+sudo ln -sf /usr/bin/php7.0 /etc/alternatives/php
 ```
+
+#### Step 4: Configure /etc/hosts
+For each of the sites specified in the `Homestead.yaml` file, you need to add those domains to the `/etc/hosts` file on your local machine. This will route requests for the specified URLs into your Homestead machine.
+
+```shell
 ##
 # Host Database
 #
@@ -127,45 +126,34 @@ For each of the sites specified in the `Homestead.yaml` file, you need to add th
 ::1             localhost 
 
 
-
-# DoSomething Projects
-
-192.168.10.10 gladiator.dev
-192.168.10.10 longshot.dev
+# Homestead Projects
 192.168.10.10 northstar.dev
 192.168.10.10 phoenix.dev
 192.168.10.10 rogue.dev
-
 ```
-
-</details>
 
 Make sure that the IP specified (e.g. `192.168.10.10 phoenix.dev`) matches the `ip` key in the `Homestead.yaml` file!
 
-After the Homestead environment is provisioned, each site will be available from the domain specified, such as:
 
-```
-http://phoenix.dev
-```
+#### Step 5: Let's do this!
 
+You should be ready to go! Follow the per-project installation instructions in each README file to install Composer dependencies, run database migrations, and build any front-end assets. Each of your sites should now be accessible in a web browser, like [http://phoenix.dev](http://phoenix.dev)! Have fun! :sparkles:
 
 
-## Usage
-You can start the virtual machine, head into the directory for the Homestead repository and run:
+## Daily Usage
+You can start your virtual machine from the `~/Code/homestead` directory you created above.
 
 ```shell
 $ cd ~/Code/homestead
-
 $ vagrant up
 ```
 
-Vagrant will boot the virtual machine and automatically provision the box based on the configurations specified in the `Homestead.yaml` file.
+If you've made any changes to your `Homestead.yaml` file, Vagrant will automatically make the corresponding changes on your virtual machine. You can also do this by running `vagrant provision` from this directory at any time.
 
-**There's a better way!™**
+#### There's a better way!™
+It can be frustrating to have to always switch between your Homestead directory and other project directories. Luckily, you can save some time by making a `homestead` command that lets you interact with your Homestead virtual machine from anywhere:
 
-Instead of having to change directories from a specific project, over to the Homestead repository directory to launch the Vagrant machine (or execute other Vagrant commands), it is recommended to set up a custom bash function that will allow you to run commands on the Homestead vagrant box from anywhere in your filesystem.
-
-Add the following function to either your `.bashrc` or `.bash_profile`:
+Add the following function to your `.bashrc` or `.bash_profile`:
 
 ```bash
 function homestead() {
@@ -173,14 +161,10 @@ function homestead() {
 }
 ```
 
-Make sure the path to the homestead repository (`~/Code/homestead`) matches what the actual path of your Homestead installation is on your local machine.
+Make sure the path to the homestead repository (`~/Code/homestead`) matches the path you chose when installing Homestead installation on your local machine. After saving those changes, either open a new terminal window or run `source ~/.bashrc` or `source ~/.bash_profile`.
 
-To register the function, either open a new terminal window or run `source ~/.bashrc` or `source ~/.bash_profile`.
-
-This function will now allow you to run any of the vagrant commands as `homestead up`, `homestead ssh` or `homestead halt` etc., from anywhere on your system.
-
+You can now run `homestead up`, `homestead ssh` or `homestead halt` from anywhere!
 
 
 ## Troubleshooting
-If you encounter any issues while installing and setting up Homestead, please refer to the [troubleshooting guide](troubleshooting.md).
-
+If you encounter any issues while installing & using Homestead, refer to the [troubleshooting guide](troubleshooting.md).

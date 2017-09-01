@@ -64,7 +64,7 @@ folders:
 # sure the 'to' path begins with one of the folders
 # you linked above.
 sites:
-    - map: northstar.app
+    - map: northstar.dev
       to: /home/vagrant/Code/northstar/public
       php: "7.0"
 

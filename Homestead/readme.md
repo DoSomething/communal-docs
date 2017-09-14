@@ -23,7 +23,7 @@ Check out the [latest tagged release](https://github.com/laravel/homestead/relea
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v6.2.0
+$ git checkout v6.2.2
 ```
 
 #### Step 3: Configure Homestead
@@ -107,8 +107,8 @@ Finally, make one change to the `after.sh` file:
 # add any commands you wish to this file and they will
 # be run after the Homestead machine is provisioned.
 
-# Use PHP 7.0 for the CLI.
-sudo ln -sf /usr/bin/php7.0 /etc/alternatives/php
+# Switch to PHP 7.0 for the default CLI.
+sudo ln -sf /usr/bin/php7.0 /usr/bin/php
 ```
 
 #### Step 4: Configure /etc/hosts

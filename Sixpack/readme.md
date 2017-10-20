@@ -2,7 +2,7 @@
 
 > [Sixpack](http://sixpack.seatgeek.com/) is a framework to enable A/B testing across multiple programming languages. It does this by exposing a simple API for client libraries. Client libraries can be written in virtually any language.
 
-_more info on DS and Sixpack usage_
+We use it to help run various experiments on content, design and interface elements that help inform what our users prefer and respond better to.
 
 ## Requirements
 - Redis >= 2.6
@@ -59,4 +59,16 @@ $ sudo SIXPACK_CONFIG=/etc/sixpack/config.yml sixpack-web &
 ```
 
 _Note: the `&` at the end of each command, just tells the shell to run the command in the background._
+
+If you need to terminate either or both of the server processes running, you can do so using `pkill`:
+
+```
+$ pkill sixpack
+```
+
+```
+$ pkill sixpack-web
+```
+
+You _may_ have to use `sudo` to run the above commands.
 

@@ -11,7 +11,7 @@ We use it to help run various experiments on content, design and interface eleme
 ## Installation
 
 #### Step 1: Install Python Tools & Sixpack
-On your local [Homestead]() virtual environment, SSH into the box and install the python development tools:
+On your local [Homestead](https://github.com/DoSomething/communal-docs/tree/master/Homestead) virtual environment, SSH into the box and install the python development tools:
 
 ```shell
 $ sudo apt-get install python-dev

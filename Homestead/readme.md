@@ -1,6 +1,8 @@
 # Homestead Setup
 
-__Laravel Homestead is an official, pre-packaged Vagrant box that provides you a wonderful development environment without requiring you to install PHP, a web server, and any other server software on your local machine.__ We use it to ensure everyone on the team has a consistent environment & can get up and running quickly!
+> Laravel Homestead is an official, pre-packaged Vagrant box that provides you a wonderful development environment without requiring you to install PHP, a web server, and any other server software on your local machine.
+
+We use it to ensure everyone on the team has a consistent environment & can get up and running quickly!
 
 _Here's a "quick start" guide to using Homestead. Refer to the [official documentation](https://laravel.com/docs/master/homestead) for more information._ :books:
 

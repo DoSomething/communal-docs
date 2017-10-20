@@ -10,4 +10,10 @@ Simply link to a specified documentation file in this repository from another Do
 
 <br />
 
+
+## Table of Contents
+
+- [Homestead](https://github.com/DoSomething/communal-docs/tree/master/Homestead)
+- [Sixpack](https://github.com/DoSomething/communal-docs/tree/master/Sixpack)
+
 <p align="center">©2017 DoSomething.org.</p>

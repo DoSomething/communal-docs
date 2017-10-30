@@ -25,7 +25,7 @@ Check out the [latest tagged release](https://github.com/laravel/homestead/relea
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v6.2.2
+$ git checkout v6.5.0
 ```
 
 #### Step 3: Configure Homestead

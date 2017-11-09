@@ -3,7 +3,7 @@ Central hub for documenting [Puck](https://github.com/DoSomething/puck) and the 
 
 **Current spec version:** `1.2.0`. [Change log](./changelog.md)
 
-[Specification mock and definitions](./spec.md)
+[Specification and definitions](./spec.md)
 
 [Puck events](./events.md)
 

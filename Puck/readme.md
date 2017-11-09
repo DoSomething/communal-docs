@@ -4,5 +4,7 @@ Central hub for documenting [Puck](https://github.com/DoSomething/puck) and the 
 **Current version:** `1.2.0`. [Change log](./changelog.md)
 
 [Specification mock and definitions](./spec.md)
+
 [Puck events](./events.md)
+
 [Puck Sources](./sources.md)

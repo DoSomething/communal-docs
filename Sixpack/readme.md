@@ -17,10 +17,10 @@ On your local [Homestead](https://github.com/DoSomething/communal-docs/tree/mast
 $ sudo apt-get install python-dev
 ```
 
-Then install **sixpack**:
+Then install **sixpack** from the DoSomething fork:
 
 ```shell
-$ sudo pip install sixpack
+$ sudo pip install -e git+https://github.com/DoSomething/sixpack.git#egg=sixpack
 ```
 
 #### Step 2: Create Sixpack Configuration
@@ -72,3 +72,11 @@ $ pkill sixpack-web
 
 You _may_ have to use `sudo` to run the above commands.
 
+#### Step 4: Set Local Host
+To easily access Sixpack and the Sixpack web interface in the browser add the following line to your `/etc/hosts` file:
+
+```
+192.168.10.10 sixpack.dev
+```
+
+You can now access Sixpack at `sixpack.dev:5000` to confirm it is running and access the Sixpack web interface at `sixpack.dev:5001`.

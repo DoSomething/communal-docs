@@ -73,7 +73,7 @@ $ pkill sixpack-web
 You _may_ have to use `sudo` to run the above commands.
 
 #### Step 4: Set Local Host
-To easily access Sixpack and the Sixpakc web interface in the browser add the following line to your `/etc/hosts` file:
+To easily access Sixpack and the Sixpack web interface in the browser add the following line to your `/etc/hosts` file:
 
 ```
 192.168.10.10 sixpack.dev

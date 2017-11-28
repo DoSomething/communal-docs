@@ -159,7 +159,11 @@ Add the following function to your `.bashrc` or `.bash_profile`:
 
 ```bash
 function homestead() {
-  ( cd ~/Code/homestead && vagrant $* )
+  DIRECTORY=$(pwd)
+  HOMESTEAD_DIRECTORY="$HOME/Code/homestead"
+  HOME_RELATIVE_DIRECTORY=${DIRECTORY/$HOME/\~}
+  DEFAULT="ssh --command \"cd $HOME_RELATIVE_DIRECTORY; bash\""
+  (cd $HOMESTEAD_DIRECTORY; eval "vagrant ${*:-$DEFAULT}")
 }
 ```
 

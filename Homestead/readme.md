@@ -66,15 +66,15 @@ folders:
 # sure the 'to' path begins with one of the folders
 # you linked above.
 sites:
-    - map: northstar.dev
+    - map: northstar.test
       to: /home/vagrant/Code/northstar/public
       php: "7.0"
 
-    - map: phoenix.dev
+    - map: phoenix.test
       to: /home/vagrant/Code/phoenix-next/public
       php: "7.0"
     
-    - map: rogue.dev
+    - map: rogue.test
       to: /home/vagrant/Code/rogue/public
       php: "7.0"
 
@@ -129,17 +129,17 @@ For each of the sites specified in the `Homestead.yaml` file, you need to add th
 
 
 # Homestead Projects
-192.168.10.10 northstar.dev
-192.168.10.10 phoenix.dev
-192.168.10.10 rogue.dev
+192.168.10.10 northstar.test
+192.168.10.10 phoenix.test
+192.168.10.10 rogue.test
 ```
 
-Make sure that the IP specified (e.g. `192.168.10.10 phoenix.dev`) matches the `ip` key in the `Homestead.yaml` file!
+Make sure that the IP specified (e.g. `192.168.10.10 phoenix.test`) matches the `ip` key in the `Homestead.yaml` file!
 
 
 #### Step 5: Let's do this!
 
-You should be ready to go! Follow the per-project installation instructions in each README file to install Composer dependencies, run database migrations, and build any front-end assets. Each of your sites should now be accessible in a web browser, like [http://phoenix.dev](http://phoenix.dev)! Have fun! :sparkles:
+You should be ready to go! Follow the per-project installation instructions in each README file to install Composer dependencies, run database migrations, and build any front-end assets. Each of your sites should now be accessible in a web browser, like [http://phoenix.test](http://phoenix.test)! Have fun! :sparkles:
 
 
 ## Daily Usage

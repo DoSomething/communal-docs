@@ -76,7 +76,7 @@ You _may_ have to use `sudo` to run the above commands.
 To easily access Sixpack and the Sixpack web interface in the browser add the following line to your `/etc/hosts` file:
 
 ```
-192.168.10.10 sixpack.dev
+192.168.10.10 sixpack.test
 ```
 
-You can now access Sixpack at `sixpack.dev:5000` to confirm it is running and access the Sixpack web interface at `sixpack.dev:5001`.
+You can now access Sixpack at `sixpack.test:5000` to confirm it is running and access the Sixpack web interface at `sixpack.test:5001`.

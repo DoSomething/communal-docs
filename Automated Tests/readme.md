@@ -1,7 +1,7 @@
 # Services Used
 
 ## Runscope
-Runscope Is a service that allows us to run automated API tests to evaluate the uptime, performance and correctness of an API.
+Runscope is a service that allows us to run automated API tests to evaluate the uptime, performance and correctness of an API.
 
 ## Ghost Inspector
 Ghost Inspector is an automated website testing and monitoring service that checks for problems with your website or application. It carries out operations in a browser, the same way a user would, to ensure that everything is working properly.

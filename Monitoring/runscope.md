@@ -22,10 +22,13 @@ If setting up a new application you will want to create a new **Bucket** via the
 
 ### Setup
 To setup a new test use the **Create Test** dialog if in a new Bucket:
+
 ![Runscope Create Test Dialog](_assets/runscope-create-test-dialog.png)
 
 Otherwise, you can use the **Create Test** dropdown:
+
 ![Runscope Create Test Dropdown](_assets/runscope-create-test-dropdown.png)
 
 Once you create the new test, proceed to fill out the **Environment** and **Steps** settings:
+
 ![Runscope New Test Settings](_assets/runscope-new-test-settings.png)

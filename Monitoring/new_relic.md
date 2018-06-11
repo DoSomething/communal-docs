@@ -19,11 +19,11 @@ Most of DoSomething.org's applications are hosted using the Heroku platform, and
 ### Setup
 To setup a new New Relic APM app, from the APM section, click on the **Add more** button at the top right above the existing app list:
 
-![New Relic Add New App](new-relic-add-new-app.png)
+![New Relic Add New App](_assets/new-relic-add-new-app.png)
 
 Next select a web agent language to set for the new app, and then click the button to get the license key for this new app:
 
-![New Relic New App License Key](new-relic-new-app-license-key.png)
+![New Relic New App License Key](_assets/new-relic-new-app-license-key.png)
 
 
 #### Heroku

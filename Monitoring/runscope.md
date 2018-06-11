@@ -20,7 +20,7 @@ _Ideally a Runscope test exists for each API endpoint available on a service._
 
 If setting up a new application you will want to create a new **Bucket** via the Organization dropdown menu and clicking to **Create Bucket**.
 
-### Setup
+### Usage
 To setup a new test use the **Create Test** dialog if in a new Bucket:
 
 ![Runscope Create Test Dialog](_assets/runscope-create-test-dialog.png)

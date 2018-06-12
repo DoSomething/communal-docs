@@ -20,12 +20,12 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [latest tagged release](https://github.com/laravel/homestead/releases) of Homestead, since the `master` branch may not always be stable.
+Check out the [`v7.6.2` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v6.5.0
+$ git checkout v7.6.2
 ```
 
 #### Step 3: Configure Homestead

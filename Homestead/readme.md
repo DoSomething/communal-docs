@@ -31,7 +31,7 @@ $ git checkout v7.8.0
 #### Step 3: Configure Homestead
 Next, run the `bash init.sh` command from within the Homestead directory, which will create the `Homestead.yaml` configuration file & `after.sh` shell script.
 
-You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix Next](https://github.com/dosomething/phoenix-next), and [Rogue](https://github.com/dosomething/rogue):
+You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix Next](https://github.com/dosomething/phoenix-next), [Rogue](https://github.com/dosomething/rogue), and [Chompy](https://github.com/dosomething/chompy):
 
 ```yaml
   ---
@@ -77,6 +77,10 @@ sites:
     - map: rogue.test
       to: /home/vagrant/Code/rogue/public
       php: "7.0"
+      
+    - map: chompy.test
+      to: /home/vagrant/Code/chompy/public
+      php: "7.1"
 
 # These databases will automatically be created by
 # Homestead when provisioning your virtual machine.
@@ -132,6 +136,7 @@ For each of the sites specified in the `Homestead.yaml` file, you need to add th
 192.168.10.10 northstar.test
 192.168.10.10 phoenix.test
 192.168.10.10 rogue.test
+192.168.10.10 chompy.test
 ```
 
 Make sure that the IP specified (e.g. `192.168.10.10 phoenix.test`) matches the `ip` key in the `Homestead.yaml` file!

@@ -1,15 +1,15 @@
 # Papertrail
 
 ## What
-[Papertrail](http://papertrailapp.com) is log management service that makes it easy to aggregate logs from all our applications, search and filter them, and trigger alerting based on trends. It's a valuable tool when debugging an issue in production.
+[Papertrail](http://papertrailapp.com) is a log management service that makes it easy to aggregate logs from all our applications, search and filter them, and trigger alerting based on trends. It's a valuable tool when debugging an issue in production.
 
 ## Why
-We use a single Papertrail organization to make it easy for everyone on the team to access logs without having to configure their own custom infrastructure & to track issues that occur between multiple applications.
+We use a single Papertrail organization to make it easy to track issues that occur between multiple applications, and so everyone on the team can access logs without having to configure their own custom infrastructure.
 
 ## How
-### …via the web
-If you don't have access to Papertrail, drop a note in [#announce-tech](https://dosomething.slack.com/messages/C782XBKDM/).
+If you don't have access to Papertrail, drop a note in [#team-devops](https://dosomething.slack.com/messages/C03T8SDJJ/).
 
+### …via the web
 Papertrail's [Dashboard](https://papertrailapp.com/dashboard) makes it easy to jump to logs by environment or application:
 
 ![screen shot 2018-08-06 at 3 26 26 pm](https://user-images.githubusercontent.com/583202/43736945-8a67e30a-998d-11e8-9996-403b892bbdf1.png)

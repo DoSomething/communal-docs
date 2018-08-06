@@ -33,13 +33,13 @@ papertrail -s dosomething-northstar-qa -f
 # tail all logs from a particular Heroku dyno:
 papertrail -s dosomething-northstar "app/queue" -f
 
-# or go wild & count of recent production errors by application:
-papertrail --min-time '10 minutes ago' -S "All Errors" | cut -f 4 -d ' ' | sort | uniq -c
+# or count recent production errors by application:
+papertrail --min-time '1 hour ago' -S "All Errors" | cut -f 4 -d ' ' | sort | uniq -c
 ```
 
 ### Setup
 
-To add a Heroku application to our Papertrail account, simply attach a log drain. First, grab the appropriate log drain from the [Log Destinations](https://papertrailapp.com/account/destinations) tab in our account settings. Then, use the Heroku CLI to attach it to your app:
+To add a Heroku application to our Papertrail account, simply attach a [log drain](https://devcenter.heroku.com/articles/log-drains). First, grab the appropriate URL from the [Log Destinations](https://papertrailapp.com/account/destinations) tab in our account settings. Then, use the Heroku CLI to attach it to your app:
 
 ```sh
 heroku drains:add syslog+tls://logsN.papertrailapp.com:NNNNN --app APP_NAME

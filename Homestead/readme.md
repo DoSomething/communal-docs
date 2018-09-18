@@ -68,7 +68,7 @@ folders:
 sites:
     - map: northstar.test
       to: /home/vagrant/Code/northstar/public
-      php: "7.0"
+      php: "7.2"
 
     - map: phoenix.test
       to: /home/vagrant/Code/phoenix-next/public
@@ -76,7 +76,7 @@ sites:
     
     - map: rogue.test
       to: /home/vagrant/Code/rogue/public
-      php: "7.0"
+      php: "7.2"
       
     - map: chompy.test
       to: /home/vagrant/Code/chompy/public

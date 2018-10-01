@@ -20,12 +20,12 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [`v7.12.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
+Check out the [`v7.17.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v7.12.0
+$ git checkout v7.17.0
 ```
 
 #### Step 3: Configure Homestead
@@ -72,7 +72,7 @@ sites:
 
     - map: phoenix.test
       to: /home/vagrant/Code/phoenix-next/public
-      php: "7.0"
+      php: "7.2"
     
     - map: rogue.test
       to: /home/vagrant/Code/rogue/public
@@ -114,7 +114,9 @@ Finally, make one change to the `after.sh` file:
 # be run after the Homestead machine is provisioned.
 
 # Switch to PHP 7.0 for the default CLI.
-sudo ln -sf /usr/bin/php7.0 /usr/bin/php
+sudo update-alternatives --set php /usr/bin/php7.2
+sudo update-alternatives --set php-config /usr/bin/php-config7.2
+sudo update-alternatives --set phpize /usr/bin/phpize7.2
 ```
 
 #### Step 4: Configure /etc/hosts

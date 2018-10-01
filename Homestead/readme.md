@@ -72,7 +72,7 @@ sites:
 
     - map: phoenix.test
       to: /home/vagrant/Code/phoenix-next/public
-      php: "7.0"
+      php: "7.2"
     
     - map: rogue.test
       to: /home/vagrant/Code/rogue/public

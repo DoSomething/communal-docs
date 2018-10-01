@@ -113,7 +113,7 @@ Finally, make one change to the `after.sh` file:
 # add any commands you wish to this file and they will
 # be run after the Homestead machine is provisioned.
 
-# Switch to PHP 7.0 for the default CLI.
+# Switch to PHP 7.2 for the default CLI.
 sudo update-alternatives --set php /usr/bin/php7.2
 sudo update-alternatives --set php-config /usr/bin/php-config7.2
 sudo update-alternatives --set phpize /usr/bin/phpize7.2

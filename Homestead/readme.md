@@ -49,6 +49,9 @@ keys:
 # Northstar, you can set this to `false`.
 mongodb: true
 
+# Use MariaDB for SQL databases.
+mariadb: true
+
 # Configure which folders on your local machine
 # are accessible on the Homestead VM. This should
 # include an entry for whichever folders you store

@@ -120,6 +120,13 @@ Finally, make one change to the `after.sh` file:
 sudo update-alternatives --set php /usr/bin/php7.2
 sudo update-alternatives --set php-config /usr/bin/php-config7.2
 sudo update-alternatives --set phpize /usr/bin/phpize7.2
+
+# Install New Relic agent:
+sudo sh -c "echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' > /etc/apt/sources.list.d/newrelic.list"
+wget -O- https://download.newrelic.com/548C16BF.gpg | sudo apt-key add -
+sudo apt-get update
+
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install newrelic-php5
 ```
 
 #### Step 4: Configure /etc/hosts

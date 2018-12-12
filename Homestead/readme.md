@@ -20,12 +20,12 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [`v7.17.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
+Check out the [`v7.20.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v7.17.0
+$ git checkout v7.20.0
 ```
 
 #### Step 3: Configure Homestead
@@ -48,6 +48,9 @@ keys:
 # Install MongoDB. If you're not working on
 # Northstar, you can set this to `false`.
 mongodb: true
+
+# Use MariaDB for SQL databases.
+mariadb: true
 
 # Configure which folders on your local machine
 # are accessible on the Homestead VM. This should
@@ -117,6 +120,13 @@ Finally, make one change to the `after.sh` file:
 sudo update-alternatives --set php /usr/bin/php7.2
 sudo update-alternatives --set php-config /usr/bin/php-config7.2
 sudo update-alternatives --set phpize /usr/bin/phpize7.2
+
+# Install New Relic agent:
+sudo sh -c "echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' > /etc/apt/sources.list.d/newrelic.list"
+wget -O- https://download.newrelic.com/548C16BF.gpg | sudo apt-key add -
+sudo apt-get update
+
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install newrelic-php5
 ```
 
 #### Step 4: Configure /etc/hosts

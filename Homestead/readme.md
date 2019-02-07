@@ -92,6 +92,7 @@ databases:
     - phoenix_test
     - rogue
     - rogue_test
+    - chompy
 
 # blackfire:
 #     - id: foo

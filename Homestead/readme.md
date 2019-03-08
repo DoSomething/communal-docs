@@ -95,7 +95,6 @@ databases:
     - rogue
     - rogue_test
 
-
 # blackfire:
 #     - id: foo
 #       token: bar

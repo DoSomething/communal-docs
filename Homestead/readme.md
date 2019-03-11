@@ -88,11 +88,12 @@ sites:
 # These databases will automatically be created by
 # Homestead when provisioning your virtual machine.
 databases:
+    - aurora
+    - chompy
     - phoenix
     - phoenix_test
     - rogue
     - rogue_test
-    - chompy
 
 # blackfire:
 #     - id: foo

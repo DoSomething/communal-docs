@@ -31,7 +31,7 @@ $ git checkout v7.20.0
 #### Step 3: Configure Homestead
 Next, run the `bash init.sh` command from within the Homestead directory, which will create the `Homestead.yaml` configuration file & `after.sh` shell script.
 
-You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix Next](https://github.com/dosomething/phoenix-next), [Rogue](https://github.com/dosomething/rogue), and [Chompy](https://github.com/dosomething/chompy):
+You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix Next](https://github.com/dosomething/phoenix-next), [Rogue](https://github.com/dosomething/rogue), [Aurora](https://github.com/dosomething/aurora), and [Chompy](https://github.com/dosomething/chompy):
 
 ```yaml
   ---
@@ -69,6 +69,10 @@ folders:
 # sure the 'to' path begins with one of the folders
 # you linked above.
 sites:
+    - map: aurora.test
+      to: /home/vagrant/Code/aurora/public
+      php: "7.2"
+
     - map: northstar.test
       to: /home/vagrant/Code/northstar/public
       php: "7.2"
@@ -147,6 +151,7 @@ For each of the sites specified in the `Homestead.yaml` file, you need to add th
 
 
 # Homestead Projects
+192.168.10.10 aurora.test
 192.168.10.10 northstar.test
 192.168.10.10 phoenix.test
 192.168.10.10 rogue.test
@@ -158,7 +163,11 @@ Make sure that the IP specified (e.g. `192.168.10.10 phoenix.test`) matches the 
 
 #### Step 5: Let's do this!
 
-You should be ready to go! Follow the per-project installation instructions in each README file to install Composer dependencies, run database migrations, and build any front-end assets. Each of your sites should now be accessible in a web browser, like [http://phoenix.test](http://phoenix.test)! Have fun! :sparkles:
+You should be ready to go! 
+
+SSH into your Virtualbox (`cd Code/homestead`, then `vagrant ssh`)
+
+Next, navigate to the project directory within your Virtualbox (e.g. `cd Code/phoenix`) and follow the per-project installation instructions in each README file to install Composer dependencies, run database migrations, and build any front-end assets. Each of your sites should now be accessible in a web browser, like [http://phoenix.test](http://phoenix.test)! Have fun! :sparkles:
 
 
 ## Daily Usage

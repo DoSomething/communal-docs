@@ -165,9 +165,9 @@ Make sure that the IP specified (e.g. `192.168.10.10 phoenix.test`) matches the 
 
 You should be ready to go! 
 
-SSH into your Virtualbox (`cd homestead`, `vagrant ssh`)
+SSH into your Virtualbox (`cd Code/homestead`, then `vagrant ssh`)
 
-Next, follow the per-project installation instructions in each README file to install Composer dependencies, run database migrations, and build any front-end assets. Each of your sites should now be accessible in a web browser, like [http://phoenix.test](http://phoenix.test)! Have fun! :sparkles:
+Next, navigate to the project directory within your Virtualbox (e.g. `cd Code/phoenix`) and follow the per-project installation instructions in each README file to install Composer dependencies, run database migrations, and build any front-end assets. Each of your sites should now be accessible in a web browser, like [http://phoenix.test](http://phoenix.test)! Have fun! :sparkles:
 
 
 ## Daily Usage

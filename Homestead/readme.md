@@ -31,7 +31,7 @@ $ git checkout v8.2.0
 #### Step 3: Configure Homestead
 Next, run the `bash init.sh` command from within the Homestead directory, which will create the `Homestead.yaml` configuration file & `after.sh` shell script.
 
-You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix Next](https://github.com/dosomething/phoenix-next), [Rogue](https://github.com/dosomething/rogue), [Aurora](https://github.com/dosomething/aurora), and [Chompy](https://github.com/dosomething/chompy):
+You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix](https://github.com/dosomething/phoenix-next), [Rogue](https://github.com/dosomething/rogue), [Aurora](https://github.com/dosomething/aurora), and [Chompy](https://github.com/dosomething/chompy):
 
 ```yaml
   ---

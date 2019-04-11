@@ -122,6 +122,9 @@ Finally, make one change to the `after.sh` file:
 # add any commands you wish to this file and they will
 # be run after the Homestead machine is provisioned.
 
+# Use "polling" rather than unsupported filesystem events for tools like Webpack:
+echo 'export CHOKIDAR_USEPOLLING=true' >>~/.bash_profile
+
 # Switch to PHP 7.2 for the default CLI.
 sudo update-alternatives --set php /usr/bin/php7.2
 sudo update-alternatives --set php-config /usr/bin/php-config7.2

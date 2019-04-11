@@ -20,18 +20,18 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [`v7.20.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
+Check out the [`v8.2.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v7.20.0
+$ git checkout v8.2.0
 ```
 
 #### Step 3: Configure Homestead
 Next, run the `bash init.sh` command from within the Homestead directory, which will create the `Homestead.yaml` configuration file & `after.sh` shell script.
 
-You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix Next](https://github.com/dosomething/phoenix-next), [Rogue](https://github.com/dosomething/rogue), [Aurora](https://github.com/dosomething/aurora), and [Chompy](https://github.com/dosomething/chompy):
+You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix](https://github.com/dosomething/phoenix-next), [Rogue](https://github.com/dosomething/rogue), [Aurora](https://github.com/dosomething/aurora), and [Chompy](https://github.com/dosomething/chompy):
 
 ```yaml
   ---
@@ -122,6 +122,9 @@ Finally, make one change to the `after.sh` file:
 # add any commands you wish to this file and they will
 # be run after the Homestead machine is provisioned.
 
+# Use "polling" rather than unsupported filesystem events for tools like Webpack:
+echo 'export CHOKIDAR_USEPOLLING=true' >> /home/vagrant/.bash_profile
+
 # Switch to PHP 7.2 for the default CLI.
 sudo update-alternatives --set php /usr/bin/php7.2
 sudo update-alternatives --set php-config /usr/bin/php-config7.2
@@ -165,9 +168,9 @@ Make sure that the IP specified (e.g. `192.168.10.10 phoenix.test`) matches the 
 
 You should be ready to go! 
 
-SSH into your Virtualbox (`cd Code/homestead`, then `vagrant ssh`)
+If this is your first time working on an application, head over to the project directory within your Homestead box (following the "Daily Usage" instructions below) and follow the project's installation instructions in its README file to install dependencies, run database migrations, and build any front-end assets.
 
-Next, navigate to the project directory within your Virtualbox (e.g. `cd Code/phoenix`) and follow the per-project installation instructions in each README file to install Composer dependencies, run database migrations, and build any front-end assets. Each of your sites should now be accessible in a web browser, like [http://phoenix.test](http://phoenix.test)! Have fun! :sparkles:
+Each of your sites should now be accessible in a web browser, like [http://phoenix.test](http://phoenix.test)! Have fun! :sparkles:
 
 
 ## Daily Usage
@@ -175,7 +178,16 @@ You can start your virtual machine from the `~/Code/homestead` directory you cre
 
 ```shell
 $ cd ~/Code/homestead
+
+# To start your Homestead box:
 $ vagrant up
+
+# To SSH into your Vagrant box (for running commands
+# like `composer` or `php artisan`):
+$ vagrant ssh
+
+# To stop your Homestead box:
+$ vagrant stop
 ```
 
 If you've made any changes to your `Homestead.yaml` file, Vagrant will automatically make the corresponding changes on your virtual machine. You can also do this by running `vagrant provision` from this directory at any time.

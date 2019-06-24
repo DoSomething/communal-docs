@@ -9,7 +9,7 @@ _Here's a "quick start" guide to using Homestead. Refer to the [official documen
 ## Installation
 
 #### Step 1: Install VirtualBox & Vagrant
-Download and install the latest version of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [Vagrant](https://www.vagrantup.com/downloads.html).
+Download and install the latest version of [VirtualBox 5.2.x](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) & [Vagrant](https://www.vagrantup.com/downloads.html).
 
 #### Step 2: Install Homestead
 To install Homestead, first clone the [repository](https://github.com/laravel/homestead) to wherever you store your source code (or any other location of your choice). These instructions assume you're storing your projects in `~/Code`.
@@ -20,12 +20,12 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [`v8.2.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
+Check out the [`v8.5.6` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v8.2.0
+$ git checkout v8.5.6
 ```
 
 #### Step 3: Configure Homestead

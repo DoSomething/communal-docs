@@ -211,6 +211,11 @@ Make sure the path to the homestead repository (`~/Code/homestead`) matches the 
 
 You can now run `homestead up`, `homestead ssh` or `homestead halt` from anywhere!
 
+## Contributing
+
+Be sure to commit changes to each repository from outside of your vagrant box, so your Github user will be the author (not `vagrant`).
+
+Follow [these steps](https://help.github.com/en/articles/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) to set your Github username for every repository.
 
 ## Troubleshooting
 If you encounter any issues while installing & using Homestead, refer to the [troubleshooting guide](troubleshooting.md).

@@ -34,7 +34,7 @@ Next, run the `bash init.sh` command from within the Homestead directory, which 
 You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix](https://github.com/dosomething/phoenix-next), [Rogue](https://github.com/dosomething/rogue), [Aurora](https://github.com/dosomething/aurora), and [Chompy](https://github.com/dosomething/chompy):
 
 ```yaml
-  ---
+---
 ip: "192.168.10.10"
 memory: 2048
 cpus: 1

@@ -9,7 +9,7 @@ _Here's a "quick start" guide to using Homestead. Refer to the [official documen
 ## Installation
 
 #### Step 1: Install VirtualBox & Vagrant
-Download and install the latest version of [VirtualBox 5.2.x](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) & [Vagrant](https://www.vagrantup.com/downloads.html).
+Download and install the latest version of [VirtualBox 6.x](https://www.virtualbox.org/wiki/Downloads) & [Vagrant](https://www.vagrantup.com/downloads.html).
 
 #### Step 2: Install Homestead
 To install Homestead, first clone the [repository](https://github.com/laravel/homestead) to wherever you store your source code (or any other location of your choice). These instructions assume you're storing your projects in `~/Code`.
@@ -20,12 +20,12 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [`v9.1.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
+Check out the [`v9.3.1` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v9.1.0
+$ git checkout v9.3.1
 ```
 
 #### Step 3: Configure Homestead
@@ -70,23 +70,23 @@ folders:
 sites:
     - map: aurora.test
       to: /home/vagrant/Code/aurora/public
-      php: "7.2"
+      php: "7.3"
 
     - map: northstar.test
       to: /home/vagrant/Code/northstar/public
-      php: "7.2"
+      php: "7.3"
 
     - map: phoenix.test
       to: /home/vagrant/Code/phoenix-next/public
-      php: "7.2"
+      php: "7.3"
     
     - map: rogue.test
       to: /home/vagrant/Code/rogue/public
-      php: "7.2"
+      php: "7.3"
       
     - map: chompy.test
       to: /home/vagrant/Code/chompy/public
-      php: "7.2"
+      php: "7.3"
 
 # These databases will automatically be created by
 # Homestead when provisioning your virtual machine.
@@ -118,11 +118,6 @@ Finally, make one change to the `after.sh` file:
 
 # Use "polling" rather than unsupported filesystem events for tools like Webpack:
 echo 'export CHOKIDAR_USEPOLLING=true' >> /home/vagrant/.bash_profile
-
-# Switch to PHP 7.2 for the default CLI.
-sudo update-alternatives --set php /usr/bin/php7.2
-sudo update-alternatives --set php-config /usr/bin/php-config7.2
-sudo update-alternatives --set phpize /usr/bin/phpize7.2
 
 # Install New Relic agent:
 sudo sh -c "echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' > /etc/apt/sources.list.d/newrelic.list"

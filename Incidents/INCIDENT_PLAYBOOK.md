@@ -6,7 +6,7 @@ First of all, **take a deep breath!** :relieved: It can be stressful to get an a
 
 ### First-Responder Checklist
 
-1. If you have access to a computer to troubleshoot with, **acknowledge** the incident to let others know you're on it.
+1. If you have time to troubleshoot (via phone or computer), **acknowledge** the incident to let others know you're on it.
 2. If the alert was triggered by an automated test failure (from [Ghost Inspector](https://ghostinspector.com) or [Runscope](https://www.runscope.com)), it will automatically retry. This might resolve the issue, in which case you're all set & no further action is necessary!
 
 If this wasn't cleared up by an automatic retry, it's time to figure out the severity of the issue:

@@ -6,7 +6,7 @@ First of all, **take a deep breath!** :relieved: It can be stressful to get an a
 
 ### First-Responder Checklist
 
-1. If you have time to troubleshoot (via phone or computer), **acknowledge** the incident to let others know you're on it.
+1. If you have time to troubleshoot (via phone or computer), **Acknowledge** the incident to let others know you're on it.
 2. If the alert was triggered by an automated test failure (from [Ghost Inspector](https://ghostinspector.com) or [Runscope](https://www.runscope.com)), it will automatically retry. This might resolve the issue, in which case you're all set & no further action is necessary!
 
 If this wasn't cleared up by an automatic retry, it's time to figure out the severity of the issue:
@@ -14,7 +14,7 @@ If this wasn't cleared up by an automatic retry, it's time to figure out the sev
 3. What does the alert say? Can you reproduce the problem yourself? [Leave a note](#incident-notes) on the incident in PagerDuty.
 4. Is this something that affects the "core user flow" (registering a new account, signing up for a campaign, and submitting a post)? Try re-running [this Ghost Inspector test](https://app.ghostinspector.com/tests/5c4a1efd638e692a23208132) or testing yourself via an incognito browser.
     1. If things truly are broken, keep going down this checklist. We'll figure it out!
-    2. If not, ["snooze" the incident](https://support.pagerduty.com/docs/editing-incidents#section-snooze-an-incident) and we can look into more on the next business day.
+    2. If not, [**Snooze** the incident](https://support.pagerduty.com/docs/editing-incidents#section-snooze-an-incident) and we can look into more on the next business day.
 
 Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 
@@ -24,7 +24,7 @@ Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 7. Does this failure relate to a recent change or deploy?
     1. If we changed content on a campaign (such as a closed campaign or new copy) and that's causing the failure, update the test to reflect that & re-run the test. If that resolves the incident, you're all set!
     2. If this relates to a recent deploy, try [rolling back that deploy](#rolling-back-deploys) to the previous release. We can always fix the bug when we're back in the office.
-8. If the site is still broken, escalate the incident to bring in a technical lead.
+8. If the site is still broken, **Escalate** the incident to bring in a technical lead.
 
 We'll [create a new `#incident-####` channel](#incident-channels) to continue to debug & monitor the incident. While we figure out next steps, we'll also write a message in `#announce` to let other staffers know that we're looking into the problem. The message should roughly follow this template:
 

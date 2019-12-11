@@ -54,7 +54,7 @@ It will also appear as an update in `#deploys`:
 
 ## Application Logs
 
-Our applications all publish logs to [Papertrail](https://papertrailapp.com/dashboard). You can filter by application (such as `dosomething-phoenix` or `dosomething-graphql`) or by a saved search (such as [`Phoenix: Exceptions and 5xx Server Errors`](https://papertrailapp.com/searches/45812651) or [`GraphQL: Exceptions`](https://my.papertrailapp.com/groups/10447062/events?q=system%3Adosomething-graphql+program%3Alambda+%22Error%22)).
+Our applications all publish logs to [Papertrail](https://papertrailapp.com/dashboard). You can filter by application (such as [`dosomething-phoenix`](https://my.papertrailapp.com/systems/dosomething-phoenix/events) or [`dosomething-graphql`](https://my.papertrailapp.com/systems/dosomething-graphql/events)) or by a saved search (such as [`Phoenix: Exceptions`](https://papertrailapp.com/searches/45812651) or [`GraphQL: Exceptions`](https://my.papertrailapp.com/groups/10447062/events?q=system%3Adosomething-graphql+program%3Alambda+%22Error%22)).
 
 ## Error Analytics
 

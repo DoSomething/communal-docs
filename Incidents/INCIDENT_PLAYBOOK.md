@@ -14,7 +14,7 @@ If this wasn't cleared up by an automatic retry, it's time to figure out the sev
 3. What does the alert say? Can you reproduce the problem yourself? [Leave a note](#incident-notes) on the incident in PagerDuty.
 4. Is this something that affects the "core user flow" (registering a new account, signing up for a campaign, and submitting a post)? Try re-running [this Ghost Inspector test](https://app.ghostinspector.com/tests/5c4a1efd638e692a23208132) or testing yourself via an incognito browser.
     1. If things truly are broken, keep going down this checklist. We'll figure it out!
-    2. If not, manually **resolve** the incident & we can look into this more on the next business day.
+    2. If not, ["snooze" the incident](https://support.pagerduty.com/docs/editing-incidents#section-snooze-an-incident) and we can look into more on the next business day.
 
 Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 

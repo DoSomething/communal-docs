@@ -2,5 +2,7 @@ theme: jekyll-theme-primer
 name: communal-docs
 title: false
 
+markdown: GFM
+
 plugins:
   - jemoji

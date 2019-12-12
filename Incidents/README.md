@@ -24,10 +24,6 @@ Alright, so we know things are a lil' wonky. Let's see if we can find out why:
     2. If this relates to a recent deploy, try [rolling back that deploy](#rolling-back-deploys) to the previous release. We can always fix the bug when we're back in the office.
 8. If the site is still broken, [**Escalate** the incident](#escalate-an-incident) to bring in a technical lead.
 
-We'll [create a new `#incident-####` channel](#incident-channels) to continue to debug & monitor the incident. While we figure out next steps, we'll also write a message in `#announce` to let other staffers know that we're looking into the problem. The message should roughly follow this template:
-
-> We're currently investigating issues with the website. [A brief sentence explaining the user impact in non-technical terms.] We're actively working on the problem in #incident-#### and will post updates here as we figure out more.
-
 <br/>
 <br/>
 <br/>
@@ -85,8 +81,11 @@ You can do this by "running a play" (hidden under the "more" menu on the mobile 
   <img width="708" src="https://user-images.githubusercontent.com/583202/70751752-2159e880-1cff-11ea-809c-6567b180c9ed.png">
 </p>
 
-## Incident Channels
+Once you've done that, **create a new `#incident-####` channel** to continue to debug & monitor the incident. While we figure out next steps, we'll also write a message in `#announce` to let other staffers know that we're looking into the problem. The message should roughly follow this template:
 
-If we have multiple engineers responding to an incident, we'll create an `#incident-####` channel. This can be done via PagerDuty, and should be named based on the number assigned to the incident:
+> We're currently investigating issues with the website. [A brief sentence explaining the user impact in non-technical terms.] We're actively working on the problem in #incident-#### and will post updates here as we figure out more.
+
+
+This can be done via PagerDuty, and should be named based on the number assigned to the incident:
 
 ![Screen Shot 2019-12-10 at 3 47 00 PM](https://user-images.githubusercontent.com/583202/70567666-639af280-1b64-11ea-9d1d-579dff70a5e6.png)

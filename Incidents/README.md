@@ -1,8 +1,6 @@
-# Incident Playbook
-
 This is our "playbook" to respond to incidents, such as [PagerDuty alerts](https://www.pagerduty.com).
 
-First of all, **take a deep breath!** :relieved: It can be stressful to get an alert, but we're all in this together. As a first responder, your job is to figure out whether this is a "real" emergency or not. If it is (or you're unsure), don't hesitate to hit the **Escalate** button to summon help! We've got this!
+First of all, **take a deep breath!** :relieved: It can be stressful to get an alert, but we're all in this together. As a first responder, your job is to figure out whether this is a "real" emergency or not. If it is (or you're unsure), don't hesitate to [**Escalate** the incident](#escalate-an-incident) to summon help! We've got this!
 
 ### First-Responder Checklist
 
@@ -24,7 +22,7 @@ Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 7. Does this failure relate to a recent change or deploy?
     1. If we changed content on a campaign (such as a closed campaign or new copy) and that's causing the failure, update the test to reflect that & re-run the test. If that resolves the incident, you're all set!
     2. If this relates to a recent deploy, try [rolling back that deploy](#rolling-back-deploys) to the previous release. We can always fix the bug when we're back in the office.
-8. If the site is still broken, **Escalate** the incident to bring in a technical lead.
+8. If the site is still broken, [**Escalate** the incident](#escalate-an-incident) to bring in a technical lead.
 
 We'll [create a new `#incident-####` channel](#incident-channels) to continue to debug & monitor the incident. While we figure out next steps, we'll also write a message in `#announce` to let other staffers know that we're looking into the problem. The message should roughly follow this template:
 
@@ -78,6 +76,14 @@ Sometimes, an issue might be solved by restarting the failing service. For appli
 Some problems may be due a bug in newly deployed code. If that seems like the case, the easiest solution might be to "roll back" to a previous deploy that we know was working. This is easy for applications on [Heroku](https://dashboard.heroku.com):
 
 ![Screen Shot 2019-12-10 at 3 41 26 PM](https://user-images.githubusercontent.com/583202/70567264-98f31080-1b63-11ea-92a9-38d53df7eed1.png)
+
+## Escalate an Incident
+
+You can do this by "running a play" (hidden under the "more" menu on the mobile app):
+
+<p align="center">
+  <img width="708" src="https://user-images.githubusercontent.com/583202/70751752-2159e880-1cff-11ea-809c-6567b180c9ed.png">
+</p>
 
 ## Incident Channels
 

@@ -16,13 +16,15 @@ If this wasn't cleared up by an automatic retry, it's time to figure out the sev
 
 Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 
-5. Could this be an external issue? It may be something outside of our control. Check the status pages for our providers: [AWS Status](https://status.aws.amazon.com), [Heroku Status](https://status.heroku.com), [Apollo Status](http://status.apollographql.com), and [MongoDB Status](https://status.cloud.mongodb.com).
+5. Check the troubleshooting document for this application to see if we've seen this error before:
+    - [Phoenix](https://dosomething.github.io/communal-docs/Incidents/Phoenix), [GraphQL](https://dosomething.github.io/communal-docs/Incidents/GraphQL), [Northstar](https://dosomething.github.io/communal-docs/Incidents/Northstar), [Rogue](https://dosomething.github.io/communal-docs/Incidents/Rogue), [Gambit](https://dosomething.github.io/communal-docs/Incidents/Gambit), [Blink](https://dosomething.github.io/communal-docs/Incidents/Blink)
+6. Could this be an external issue? It may be something outside of our control. Check the status pages for our providers: [AWS Status](https://status.aws.amazon.com), [Heroku Status](https://status.heroku.com), [Apollo Status](http://status.apollographql.com), and [MongoDB Status](https://status.cloud.mongodb.com).
     1. If one of these services are unhealthy, note it on the incident & continue down the checklist.
-6. Look at the [application logs](#application-logs) and [error analytics](#error-analytics) for this application – does anything seem unusual? If you see something spooky, like network timeouts, try [restarting the application](#restarting-the-application).
-7. Does this failure relate to a recent change or deploy?
+7. Look at the [application logs](#application-logs) and [error analytics](#error-analytics) for this application – does anything seem unusual? If you see something spooky, like network timeouts, try [restarting the application](#restarting-the-application).
+8. Does this failure relate to a recent change or deploy?
     1. If we changed content on a campaign (such as a closed campaign or new copy) and that's causing the failure, update the test to reflect that & re-run the test. If that resolves the incident, you're all set!
     2. If this relates to a recent deploy, try [rolling back that deploy](#rolling-back-deploys) to the previous release. We can always fix the bug when we're back in the office.
-8. If the site is still broken, [**Escalate** the incident](#escalate-an-incident) to bring in a technical lead.
+9. If the site is still broken, [**Escalate** the incident](#escalate-an-incident) to bring in a technical lead.
 
 <br/>
 <br/>

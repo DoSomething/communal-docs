@@ -13,8 +13,11 @@ Simply link to a specified documentation file in this repository from another Do
 
 ## Table of Contents
 
-- [Homestead](https://github.com/DoSomething/communal-docs/tree/master/Homestead)
+- [Laravel](https://github.com/DoSomething/communal-docs/tree/master/Laravel)
+    - [Homestead](https://github.com/DoSomething/communal-docs/tree/master/Homestead)
+
 - [Sixpack](https://github.com/DoSomething/communal-docs/tree/master/Sixpack)
+
 - [Automated Tests](https://github.com/DoSomething/communal-docs/tree/master/Automated%20Tests)
 
-<p align="center">©2018 DoSomething.org.</p>
+<p align="center">© DoSomething.org.</p>

@@ -9,22 +9,23 @@ First of all, **take a deep breath!** :relieved: It can be stressful to get an a
 
 If this wasn't cleared up by an automatic retry, it's time to figure out the severity of the issue:
 
-3. What does the alert say? Can you reproduce the problem yourself? [Leave a note](#incident-notes) on the incident in PagerDuty.
-4. Is this something that affects the "core user flow" (registering a new account, signing up for a campaign, and submitting a post)? Try re-running [this Ghost Inspector test](https://app.ghostinspector.com/tests/5c4a1efd638e692a23208132) or testing yourself via an incognito browser.
+3. Have multiple incidents been created in different systems? If they seem at all related, [merge them](#merge-incidents).
+4. What does the alert say? Can you reproduce the problem yourself? [Leave a note](#incident-notes) on the incident in PagerDuty.
+5. Is this something that affects the "core user flow" (registering a new account, signing up for a campaign, and submitting a post)? Try re-running [this Ghost Inspector test](https://app.ghostinspector.com/tests/5c4a1efd638e692a23208132) or testing yourself via an incognito browser.
     1. If things truly are broken, keep going down this checklist. We'll figure it out!
     2. If not, [**Snooze** the incident](https://support.pagerduty.com/docs/editing-incidents#section-snooze-an-incident) and we can look into more on the next business day.
 
 Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 
-5. Could this be an external issue? It may be something outside of our control. Check the status pages for our providers: [AWS Status](https://status.aws.amazon.com), [Heroku Status](https://status.heroku.com), [Apollo Status](http://status.apollographql.com), and [MongoDB Status](https://status.cloud.mongodb.com).
+6. Could this be an external issue? It may be something outside of our control. Check the status pages for our providers: [AWS Status](https://status.aws.amazon.com), [Heroku Status](https://status.heroku.com), [Apollo Status](http://status.apollographql.com), and [MongoDB Status](https://status.cloud.mongodb.com).
     1. If one of these services are unhealthy, note it on the incident & continue down the checklist.
-6. Look at the [application logs](#application-logs) and [error analytics](#error-analytics) for this application – does anything seem unusual?
+7. Look at the [application logs](#application-logs) and [error analytics](#error-analytics) for this application – does anything seem unusual?
     1. We might have seen this error before & left ourselves some notes. Check the troubleshooting document for this application: [Phoenix](https://dosomething.github.io/communal-docs/Incidents/Phoenix), [GraphQL](https://dosomething.github.io/communal-docs/Incidents/GraphQL), [Northstar](https://dosomething.github.io/communal-docs/Incidents/Northstar), [Rogue](https://dosomething.github.io/communal-docs/Incidents/Rogue), [Gambit](https://dosomething.github.io/communal-docs/Incidents/Gambit), [Blink](https://dosomething.github.io/communal-docs/Incidents/Blink)
     2. If you see something spooky, like network timeouts, try [restarting the application](#restarting-the-application).
-7. Does this failure relate to a recent change or deploy?
+8. Does this failure relate to a recent change or deploy?
     1. If we changed content on a campaign (such as a closed campaign or new copy) and that's causing the failure, update the test to reflect that & re-run the test. If that resolves the incident, you're all set!
     2. If this relates to a recent deploy, try [rolling back that deploy](#rolling-back-deploys) to the previous release. We can always fix the bug when we're back in the office.
-8. If the site is still broken, [**Escalate** the incident](#escalate-an-incident) to bring in a technical lead.
+9. If the site is still broken, [**Escalate** the incident](#escalate-an-incident) to bring in a technical lead.
 
 <br/>
 <br/>
@@ -37,6 +38,14 @@ Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 <br/>
 <br/>
 <br/>
+
+## Merge Incidents
+
+If multiple related incidents are triggered at the same time, you can merge them to consolidate all of the alerts in one place. The newly merged incident will be resolved when all of the alerts within it resolve.
+
+![Screen Shot 2020-05-01 at 11 19 07 AM](https://user-images.githubusercontent.com/583202/80816627-d8b3a680-8b9d-11ea-95d6-dab73711d134.png)
+
+**Note:** You can only merge incidents while they're open (frustrating!), so do this when triaging an alert!
 
 ## Incident Notes
 

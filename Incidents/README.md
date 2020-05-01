@@ -41,7 +41,7 @@ Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 
 ## Merge Incidents
 
-If multiple related incidents are triggered at the same time, you can merge them to consolidate all of the alerts in one place. The newly merged incident will be resolved when all of the alerts within it resolve.
+If multiple related incidents are triggered at the same time, you can merge them to consolidate all of the alerts  & incident notes in one place. The newly merged incident will be resolved when all of the alerts within it resolve.
 
 ![Screen Shot 2020-05-01 at 11 19 07 AM](https://user-images.githubusercontent.com/583202/80816627-d8b3a680-8b9d-11ea-95d6-dab73711d134.png)
 

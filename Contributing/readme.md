@@ -24,7 +24,7 @@ import SectionHeader from '../../../../utilities/SectionHeader/SectionHeader';
 
 ### SVG
 
-When adding a SVG to the codebase, be sure to it SVGs through this optimizer: https://jakearchibald.github.io/svgomg.
+When adding a SVG to the codebase, be sure to run it SVGs through this optimizer: https://jakearchibald.github.io/svgomg.
 
 It will help strip out a bunch of unnecessary junk that Adobe Illustrator, Sketch (insert your favorite vector program), etc add to the code. The default settings are usually just fine and you’ll usually see around like a 50% drop in file size for most SVGs!
 

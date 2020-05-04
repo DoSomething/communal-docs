@@ -32,7 +32,7 @@ It will help strip out a bunch of unnecessary junk that Adobe Illustrator, Sketc
 
 ### Data attributes
 
-When writing tests, it's handy to check for the existence of specific HTML elements, but we want to avoid adding an id or class to an element if it's only used specifically for testing. For those instances, we'll use `data-*` attributes.
+When writing tests, it's handy to check for the existence of specific HTML elements, but we want to avoid adding an id or class to an element if it's only used specifically for testing. For those instances, we'll use `data-test` (and if needed, `data-id`) attributes.
 
 Example component:
 
@@ -57,3 +57,4 @@ Example test:
   });
 ```
 
+**Note**: We haven't been consistent about using a `data-test` attribute, there is already a mix of other attributes like `data-ref` and `data-contentful-id` instances in the Phoenix codebase besides `data-test`, that ideally should be refactored as `data-test` / `data-id`.

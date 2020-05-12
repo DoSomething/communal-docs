@@ -19,6 +19,24 @@ import ReferralsListItem from './ReferralsListItem';
 import SectionHeader from '../../../../utilities/SectionHeader/SectionHeader';
 
 ```
+### Line breaks
+
+We also prefer to add a new line before and/or after declaring a variable, to help with visibility:
+```
+function getThings(numberOfThings) {
+  const thingOne = new Thing();
+
+  if (numberOfThings === 1) {
+    return thingOne;
+  }
+  
+  const thingTwo = new Thing();
+  
+  thingTwo.sing();
+  // ....
+}
+
+```
 
 ## Assets
 

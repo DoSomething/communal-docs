@@ -122,17 +122,20 @@ Example component:
 </MyComponent>
 ```
 
-Example test utilizing testing-library utility:
+Example Jest test utilizing testing-library utility:
 
 ```js
 import { screen } from "@testing-library/react";
 
 it("Should display additional referrals count", () => {
-  cy.findByTestId("additional-referrals-count").contains("+ 2 more");
+  render(<MyComponent />);
+  
+  const element = screen.getByTestId("additional-referrals-count");
+  // ...
 });
 ```
 
-Example vanilla test:
+The Testing Library supports using the `getByTestId()` helper function in Cypress tests, but it needs to be setup in Phoenix, so for the time being the following works for Cypress tests:
 
 ```js
 it("Should display additional referrals count", () => {

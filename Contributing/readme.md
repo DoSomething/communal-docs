@@ -10,22 +10,21 @@ Most of our major projects use StyleCI to lint each commit to the repo.
 
 We prefer to sort import statements by ascending line length, e.g.:
 
-```
-import React from 'react';
-import gql from 'graphql-tag';
-import PropTypes from 'prop-types';
+```js
+import React from "react";
+import gql from "graphql-tag";
+import PropTypes from "prop-types";
 
-import Query from '../../../../Query';
-import ReferralsListItem from './ReferralsListItem';
-import SectionHeader from '../../../../utilities/SectionHeader/SectionHeader';
-
+import Query from "../../../../Query";
+import ReferralsListItem from "./ReferralsListItem";
+import SectionHeader from "../../../../utilities/SectionHeader/SectionHeader";
 ```
 
 ### Line breaks
 
-We also prefer to add a new line before and/or after declaring a variable, to help with visibility:
+We prefer to add a new line before and/or after declaring a variable, to help with visibility:
 
-```
+```js
 function getThings(numberOfThings) {
   const thingOne = new Thing();
 
@@ -38,7 +37,56 @@ function getThings(numberOfThings) {
   thingTwo.sing();
   // ....
 }
+```
 
+We also prefer to add a new line between HTML sibling elements to help visually separate elements and make it easier to comprehend the structure:
+
+```jsx
+// ✅ The following shows proper spacing between sibling elements.
+<SomeComponent>
+  <article>
+    <header>
+      <h1>Fusce Dolor</h1>
+
+      <div>Etiam porta sem malesuada magna mollis euismod.</div>
+    </header>
+
+    <div>
+      <p>
+        Sociis natoque <strong>penatibus</strong> et magnis dis parturient
+        montes. Praesent commodo cursus magna, vel scelerisque et.
+      </p>
+
+      <p>Nulla vitae elit libero, a pharetra augue.</p>
+    </div>
+  </article>
+
+  <div>
+    <p>Sed posuere consectetur est at lobortis.</p>
+  </div>
+</SomeComponent>
+```
+
+```jsx
+// 🚫 The following shows improper spacing between sibling elements.
+<SomeComponent>
+  <article>
+    <header>
+      <h1>Fusce Dolor</h1>
+      <div>Etiam porta sem malesuada magna mollis euismod.</div>
+    </header>
+    <div>
+      <p>
+        Sociis natoque <strong>penatibus</strong> et magnis dis parturient
+        montes. Praesent commodo cursus magna, vel scelerisque et.
+      </p>
+      <p>Nulla vitae elit libero, a pharetra augue.</p>
+    </div>
+  </article>
+  <div>
+    <p>Sed posuere consectetur est at lobortis.</p>
+  </div>
+</SomeComponent>
 ```
 
 ## Assets

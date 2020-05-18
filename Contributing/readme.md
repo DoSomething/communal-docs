@@ -101,9 +101,9 @@ It will help strip out a bunch of unnecessary junk that Adobe Illustrator, Sketc
 
 ### Data attributes
 
-When writing tests, it's handy to check for the existence of specific HTML elements, but we want to avoid adding an id or class to an element if it is only used specifically for testing.
+When writing tests, it is handy to check for the existence of specific HTML elements, but we want to avoid adding an id or class to an element if it is only used specifically for testing.
 
-For those instances, we'll use `data-testid` attributes.
+For those instances, we will use `data-testid` attributes.
 
 In some projects, like Phoenix, we include a package called [Testing Library](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) that provides a wonderful set of helpful utilities that can be used within our Jest and Cypress tests. It specifically includes a helper method that can grab elements by a specified `data-testid`.
 
@@ -140,4 +140,4 @@ it("Should display additional referrals count", () => {
 });
 ```
 
-**Note**: We haven't been consistent about using a `data-testid` attribute, there is already a mix of other attributes like `data-test`, `data-id`, `data-ref` and `data-contentful-id` instances in the Phoenix codebase besides `data-testid`, that ideally should be refactored as `data-testid`.
+**Note**: We haven not been consistent about using a `data-testid` attribute, there is already a mix of other attributes like `data-test`, `data-id`, `data-ref` and `data-contentful-id` instances in the Phoenix codebase besides `data-testid`, that ideally should be refactored as `data-testid`.

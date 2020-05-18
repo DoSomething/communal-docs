@@ -135,7 +135,7 @@ it("Should display additional referrals count", () => {
 });
 ```
 
-The Testing Libray supports using the `getByTestId()` helper function in Cypress tests, but it needs to be setup in Phoenix, so for the time being the following works for Cypress tests:
+The Testing Library supports using the `getByTestId()` helper function in Cypress tests, but it needs to be setup in Phoenix, so for the time being the following works for Cypress tests:
 
 ```js
 it("Should display additional referrals count", () => {

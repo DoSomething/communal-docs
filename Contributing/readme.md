@@ -6,14 +6,18 @@ We keep our [code open-source at DoSomething.org](https://github.com/dosomething
 
 Most of our major projects use StyleCI to lint each commit to the repo.
 
-### Imports
+## PHP Code
+Imports are organized in line-length order.
 
-We prefer to sort import statements by ascending line length, e.g.:
+## JS Code
+Imports are organized in ascending line-length order, with third-party package imports at the top of the file, followed by a line break and local project imports.
+
+e.g.:
 
 ```js
-import React from "react";
-import gql from "graphql-tag";
-import PropTypes from "prop-types";
+import React from 'react';
+import gql from 'graphql-tag';
+import PropTypes from 'prop-types';
 
 import Query from "../../../../Query";
 import ReferralsListItem from "./ReferralsListItem";
@@ -89,17 +93,31 @@ We also prefer to add a new line between HTML sibling elements to help visually 
 </SomeComponent>
 ```
 
-## Assets
+### React Components
+Initially when rapidly developing [Phoenix](https://github.com/DoSomething/phoenix-next), we made some decisions on code file locations/hierarchy. Overtime we've come to refine this structure a bit, and are now working to update the Phoenix codebase with the latest decisions.
 
-### SVG
+We want to update our code directory structure within the `/components` directory to follow this pattern: 
 
-When adding a SVG to the codebase, be sure to run it SVGs through this optimizer: https://jakearchibald.github.io/svgomg.
+```
+- /components
+  |_ /actions
+  |_ /artifacts
+  |_ /blocks
+  |_ /pages
+  |_ /utilities
+```
 
-It will help strip out a bunch of unnecessary junk that Adobe Illustrator, Sketch (insert your favorite vector program), etc add to the code. The default settings are usually just fine and you’ll usually see around like a 50% drop in file size for most SVGs!
+Most of the standalone components residing as children of the `/components` should fall within one of the above children directories. 
 
-## Tests
+- `/components/actions` contains dispatchers for different actions.
+- `/components/artifacts` contains small artifact components typically used inside other components, like icons, close button, spinner, etc.
+- `/components/blocks` contains interface components that may match the interface components available in Contentful, or other components that show up as distinct stacked rows that build up a page.
+- `/components/pages` contains components related to specific page types available on Phoenix.
+- `/components/utilities` contains reusable items; they don’t have a “container” component and are typically used inside other components.
 
-### Code Comments
+### Tests
+
+#### Code Comments
 
 As we write multiple tests in a single file, we use a code comment `/** @test */` to help visually separate the tests and make it easier to read through a test file.
 
@@ -120,7 +138,7 @@ it("should test another thing about this example component", () => {
 });
 ```
 
-### Data Attributes
+#### Data Attributes
 
 When writing tests, it is handy to check for the existence of specific HTML elements, but we want to avoid adding an id or class to an element if it is only used specifically for testing.
 
@@ -169,3 +187,18 @@ it("Should display additional referrals count", () => {
 ```
 
 **Note**: Cypress tests utilize the `find*` prefixed Testing Library utilities (like `findByTestId()`) instead of `get*` utilities (like `getByTestId()` in the Jest example). This is because `get*` type queries are a single try and are not support with Cypress because of how Cypress works when testing and the need for retryability. The `find*` type queries are Promise-based and will continue to retry until they find the element in question or timeout.
+
+## CSS Code
+
+We use the [Tailwind CSS Framework](https://tailwindcss.com/) on our user and admin interfaces [to help simplify](https://github.com/DoSomething/rfcs/blob/master/005-tailwindcss-framework.md) front-end development across our team.
+
+For translating spacing scale using Tailwind, there's a [handy reference](https://tailwindcss.com/docs/customizing-spacing/#default-spacing-scale).
+
+
+## Assets
+
+### SVG
+
+When adding a SVG to the codebase, be sure to run it SVGs through [this optimizer](https://jakearchibald.github.io/svgomg).
+
+It will help strip out a bunch of unnecessary junk that Adobe Illustrator, Sketch (insert your favorite vector program), etc add to the code. The default settings are usually just fine and you’ll usually see around like a 50% drop in file size for most SVGs!

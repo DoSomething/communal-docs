@@ -101,6 +101,7 @@ We want to update our code directory structure within the `/components` director
 ```
 - /components
   |_ /actions
+  |_ /artifacts
   |_ /blocks
   |_ /pages
   |_ /utilities
@@ -109,6 +110,7 @@ We want to update our code directory structure within the `/components` director
 Most of the standalone components residing as children of the `/components` should fall within one of the above children directories. 
 
 - `/components/actions` contains dispatchers for different actions.
+- `/components/artifacts` contains small artifact components typically used inside other components, like icons, close button, spinner, etc.
 - `/components/blocks` contains interface components that may match the interface components available in Contentful, or other components that show up as distinct stacked rows that build up a page.
 - `/components/pages` contains components related to specific page types available on Phoenix.
 - `/components/utilities` contains reusable items; they don’t have a “container” component and are typically used inside other components.

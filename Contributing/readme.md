@@ -20,7 +20,7 @@ import ReferralsListItem from "./ReferralsListItem";
 import SectionHeader from "../../../../utilities/SectionHeader/SectionHeader";
 ```
 
-### Line breaks
+### Line Breaks
 
 We prefer to add a new line before and/or after declaring a variable, to help with visibility:
 
@@ -99,13 +99,36 @@ It will help strip out a bunch of unnecessary junk that Adobe Illustrator, Sketc
 
 ## Tests
 
-### Data attributes
+### Code Comments
+
+As we write multiple tests in a single file, we use a code comment `/** @test */` to help visually separate the tests and make it easier to read through a test file.
+
+```js
+/** @test */
+it("should test something about this example component", () => {
+  // ...
+});
+
+/** @test */
+it("should test something else about this example component", () => {
+  // ...
+});
+
+/** @test */
+it("should test another thing about this example component", () => {
+  // ...
+});
+```
+
+### Data Attributes
 
 When writing tests, it is handy to check for the existence of specific HTML elements, but we want to avoid adding an id or class to an element if it is only used specifically for testing.
 
 For those instances, we will use `data-testid` attributes.
 
 In some projects, like Phoenix, we include a package called [Testing Library](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) that provides a wonderful set of helpful utilities that can be used within our Jest and Cypress tests. It specifically includes a helper method that can grab elements by a specified `data-testid`.
+
+**Note**: We haven not been consistent about using a `data-testid` attribute, there is already a mix of other attributes like `data-test`, `data-id`, `data-ref` and `data-contentful-id` instances in the Phoenix codebase besides `data-testid`, that ideally should be refactored as `data-testid`.
 
 Example component:
 
@@ -127,20 +150,22 @@ Example Jest test utilizing testing-library utility:
 ```js
 import { screen } from "@testing-library/react";
 
+/** @test */
 it("Should display additional referrals count", () => {
   render(<MyComponent />);
-  
+
   const element = screen.getByTestId("additional-referrals-count");
   // ...
 });
 ```
 
-The Testing Library supports using the `getByTestId()` helper function in Cypress tests, but it needs to be setup in Phoenix, so for the time being the following works for Cypress tests:
+Example Cypress test utilizing testing-library utility:
 
 ```js
+/** @test */
 it("Should display additional referrals count", () => {
-  cy.get("[data-testid=additional-referrals-count]").contains("+ 2 more");
+  cy.findByTestId("additional-referrals-count").contains("+ 2 more");
 });
 ```
 
-**Note**: We haven not been consistent about using a `data-testid` attribute, there is already a mix of other attributes like `data-test`, `data-id`, `data-ref` and `data-contentful-id` instances in the Phoenix codebase besides `data-testid`, that ideally should be refactored as `data-testid`.
+**Note**: Cypress tests utilize the `find*` prefixed Testing Library utilities (like `findByTestId()`) instead of `get*` utilities (like `getByTestId()` in the Jest example). This is because `get*` type queries are a single try and are not support with Cypress because of how Cypress works when testing and the need for retryability. The `find*` type queries are Promise-based and will continue to retry until they find the element in question or timeout.

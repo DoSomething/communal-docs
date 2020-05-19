@@ -14,7 +14,7 @@ Imports are organized in ascending line-length order, with third-party package i
 
 e.g.:
 
-``` js
+```js
 import React from 'react';
 import gql from 'graphql-tag';
 import PropTypes from 'prop-types';

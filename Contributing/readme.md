@@ -109,7 +109,7 @@ We want to update our code directory structure within the `/components` director
 
 Most of the standalone components residing as children of the `/components` should fall within one of the above children directories. 
 
-- `/components/actions` contains dispatchers for different actions.
+- `/components/actions` contains interface components that generally map to an Action type on Rogue and post user submission data to Rogue. E.g. Photo posts: `PhotoSubmissionAction`, or Text posts: `TextSubmissionAction`. These components will also usually map to an interface component available on Contentful.
 - `/components/artifacts` contains small, non-logic based components typically used inside other components, like icons, close button, spinner, etc.
 - `/components/blocks` contains interface components that may match the interface components available in Contentful, or other components that show up as distinct stacked rows that build up a page.
 - `/components/pages` contains components related to specific page types available on Phoenix.

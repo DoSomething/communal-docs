@@ -20,12 +20,12 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [`v9.3.1` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
+Check out the [`v10.10.1` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v9.3.1
+$ git checkout v10.10.1
 ```
 
 #### Step 3: Configure Homestead
@@ -45,11 +45,10 @@ authorize: ~/.ssh/id_rsa.pub
 keys:
     - ~/.ssh/id_rsa
 
-# Install MongoDB, MariaDB, and Chrome WebDriver.
+# Install MongoDB & MariaDB.
 features:
     - mongodb: true
     - mariadb: true
-    - webdriver: true
 
 # Configure which folders on your local machine
 # are accessible on the Homestead VM. This should

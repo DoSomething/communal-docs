@@ -69,23 +69,23 @@ folders:
 sites:
     - map: aurora.test
       to: /home/vagrant/Code/aurora/public
-      php: "7.3"
+      php: "7.4"
 
     - map: northstar.test
       to: /home/vagrant/Code/northstar/public
-      php: "7.3"
+      php: "7.4"
 
     - map: phoenix.test
       to: /home/vagrant/Code/phoenix-next/public
-      php: "7.3"
+      php: "7.4"
     
     - map: rogue.test
       to: /home/vagrant/Code/rogue/public
-      php: "7.3"
+      php: "7.4"
       
     - map: chompy.test
       to: /home/vagrant/Code/chompy/public
-      php: "7.3"
+      php: "7.4"
 
 # These databases will automatically be created by
 # Homestead when provisioning your virtual machine.

@@ -20,12 +20,12 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [`v9.3.1` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
+Check out the [`v10.10.1` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v9.3.1
+$ git checkout v10.10.1
 ```
 
 #### Step 3: Configure Homestead
@@ -45,11 +45,10 @@ authorize: ~/.ssh/id_rsa.pub
 keys:
     - ~/.ssh/id_rsa
 
-# Install MongoDB, MariaDB, and Chrome WebDriver.
+# Install MongoDB & MariaDB.
 features:
     - mongodb: true
     - mariadb: true
-    - webdriver: true
 
 # Configure which folders on your local machine
 # are accessible on the Homestead VM. This should
@@ -70,23 +69,23 @@ folders:
 sites:
     - map: aurora.test
       to: /home/vagrant/Code/aurora/public
-      php: "7.3"
+      php: "7.4"
 
     - map: northstar.test
       to: /home/vagrant/Code/northstar/public
-      php: "7.3"
+      php: "7.4"
 
     - map: phoenix.test
       to: /home/vagrant/Code/phoenix-next/public
-      php: "7.3"
+      php: "7.4"
     
     - map: rogue.test
       to: /home/vagrant/Code/rogue/public
-      php: "7.3"
+      php: "7.4"
       
     - map: chompy.test
       to: /home/vagrant/Code/chompy/public
-      php: "7.3"
+      php: "7.4"
 
 # These databases will automatically be created by
 # Homestead when provisioning your virtual machine.

@@ -36,13 +36,13 @@ Imports are organized in ascending line-length order, with third-party package i
 e.g.:
 
 ```js
-import React from "react";
-import gql from "graphql-tag";
-import PropTypes from "prop-types";
+import React from 'react';
+import gql from 'graphql-tag';
+import PropTypes from 'prop-types';
 
-import Query from "../../../../Query";
-import ReferralsListItem from "./ReferralsListItem";
-import SectionHeader from "../../../../utilities/SectionHeader/SectionHeader";
+import Query from '../../../../Query';
+import ReferralsListItem from './ReferralsListItem';
+import SectionHeader from '../../../../utilities/SectionHeader/SectionHeader';
 ```
 
 ### Line Breaks
@@ -145,17 +145,17 @@ As we write multiple tests in a single file, we use a code comment `/** @test */
 
 ```js
 /** @test */
-it("should test something about this example component", () => {
+it('should test something about this example component', () => {
   // ...
 });
 
 /** @test */
-it("should test something else about this example component", () => {
+it('should test something else about this example component', () => {
   // ...
 });
 
 /** @test */
-it("should test another thing about this example component", () => {
+it('should test another thing about this example component', () => {
   // ...
 });
 ```
@@ -176,8 +176,8 @@ Example component:
 <MyComponent>
   {numberOfReferrals > 3 ? (
     <div
-      data-testid="additional-referrals-count"
-      className="text-center md:text-left md:pt-16"
+      data-testid='additional-referrals-count'
+      className='text-center md:text-left md:pt-16'
     >
       {`+ ${numberOfReferrals - 3} more`}
     </div>
@@ -188,13 +188,13 @@ Example component:
 Example Jest test utilizing testing-library utility:
 
 ```js
-import { screen } from "@testing-library/react";
+import { screen } from '@testing-library/react';
 
 /** @test */
-it("Should display additional referrals count", () => {
+it('Should display additional referrals count', () => {
   render(<MyComponent />);
 
-  const element = screen.getByTestId("additional-referrals-count");
+  const element = screen.getByTestId('additional-referrals-count');
   // ...
 });
 ```
@@ -203,8 +203,8 @@ Example Cypress test utilizing testing-library utility:
 
 ```js
 /** @test */
-it("Should display additional referrals count", () => {
-  cy.findByTestId("additional-referrals-count").contains("+ 2 more");
+it('Should display additional referrals count', () => {
+  cy.findByTestId('additional-referrals-count').contains('+ 2 more');
 });
 ```
 

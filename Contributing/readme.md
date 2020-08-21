@@ -25,6 +25,8 @@ Some of these added rules include:
 
 You can find most of the rules applied via Prettier's [options](https://prettier.io/docs/en/options.html) and the [ruleset](https://github.com/weerd/php-style/blob/master/src/rules/laravel-prettier.php) we use for the PHP CS Fixer tool.
 
+There is also a helpful, [interactive guide](https://mlocati.github.io/php-cs-fixer-configurator/), to inspect and better understand what specific rules do in PHPCS Fixer and whether they are part of an include set (e.g. [`@PSR2`](https://mlocati.github.io/php-cs-fixer-configurator/#version:2.16|fixerset:@PhpCsFixer) set includes a specific group of rules).
+
 ## JS Code
 
 Most of our projects that contain JavaScript code use [Prettier](https://prettier.io/) to automatically format the style of our code along with [ESLint](https://eslint.org/) to help with linting and checking our code quality.

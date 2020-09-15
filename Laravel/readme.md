@@ -40,7 +40,9 @@ heroku run:detached php -d memory_limit=1024M artisan northstar:another-backfill
 
 ### Standard Input
 
-We often provide source files for imports as standard input, to "pipe" the file into the command from your local machine -- and so we don't have to worry about hosting it somewhere on the internet. Example:
+We often provide source files for imports as standard input, to "pipe" the file into the command from your local machine. This way, we don't have to worry about hosting it somewhere on the internet. 
+
+Example:
 
 ```
 cat ../college-board.csv | heroku run php -d memory_limit=512M artisan rogue:groups-import --name="The College Board" --filterByLocation --app dosomething-rogue-dev --no-tty

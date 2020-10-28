@@ -49,9 +49,33 @@ Now that you've confirmed this is a real issue, it's time to bring in some more 
 
 As the first responder, your job is to coordinate our response – document troubleshooting steps & make sure everyone's on the same page. At this point, you may also want to bring in additional engineers with domain expertise on the failing system(s).
 
+<br/>
+<br/>
+<br/>
+<br/>
+<p align="center">
+:fire_extinguisher:
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## After The Incident
 
 After the incident is resolved, add a ticket or comment to our ['Incidents' Pivotal board](https://www.pivotaltracker.com/n/projects/2459675). Each card on this board is a "type" of problem that could cause an incident, like "Test failures due to 503 First Byte Timeout". We use this to track trends, which we'll then discuss at our Monthly Post-Mortem meeting.
+
+<br/>
+<br/>
+<br/>
+<br/>
+<p align="center">
+:ice_cube:
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## Appendix
 

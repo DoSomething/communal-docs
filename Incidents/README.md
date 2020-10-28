@@ -2,7 +2,7 @@ This is our "playbook" to respond to incidents, such as [PagerDuty alerts](https
 
 First of all, **take a deep breath!** :relieved: It can be stressful to get an alert, but we're all in this together. As an on-call engineer, your first job is to [investigate the alert](#first-responder-checklist) to figure out whether this is a "real" emergency or not. If it is (or you're unsure), don't hesitate to [**Escalate** the incident](#escalate-an-incident) to summon help! 
 
-During the incident, you'll [coordinate our response](#during-the-incident)
+As a first-responder, you'll coordinate our response [during the incident](#during-the-incident) and document the issue [after the incident is resolved](#after-the-incident).
 
 We've got this!
 
@@ -43,7 +43,7 @@ Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 <br/>
 <br/>
 
-## Incident Response
+## During The Incident
 
 Now that you've confirmed this is a real issue, it's time to bring in some more help. [**Escalate** the incident](#escalate-an-incident) to bring in a technical lead, then [create the incident channel & notify staff](#create-the-incident-channel). This is where we'll discuss our troubleshooting efforts.
 

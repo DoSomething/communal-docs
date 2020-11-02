@@ -2,14 +2,14 @@ This is our "playbook" to respond to incidents, such as [PagerDuty alerts](https
 
 First of all, **take a deep breath!** :relieved: It can be stressful to get an alert, but we're all in this together. As an on-call engineer, your first job is to [investigate the alert](#first-responder-checklist) to figure out whether this is a "real" emergency or not. If it is (or you're unsure), don't hesitate to [**Escalate** the incident](#escalate-an-incident) to summon help! 
 
-As a first-responder, you'll coordinate our response [during the incident](#during-the-incident) and document the issue [after the incident is resolved](#after-the-incident).
+## When you get an alert...
 
-We've got this!
+As a first-responder, you'll run through the following "checklist" to investigate the alert, coordinate our response [during the incident](#during-the-incident) and document the issue [after the incident is resolved](#after-the-incident). You're the point person for our response, but the whole team is available to help out! We've got this!
 
 ### First-Responder Checklist
 
 1. If you have time to troubleshoot (via phone or computer), **Acknowledge** the incident to let others know you're on it.
-2. If the alert was triggered by an automated test failure (from [Ghost Inspector](https://ghostinspector.com) or [Runscope](https://www.runscope.com)), it will automatically retry. This might resolve the issue, in which case you're all set & can move on to [After The Incident](#after-the-incident) steps!
+2. If the alert was triggered by an automated test failure (from [Ghost Inspector](https://ghostinspector.com) or [Runscope](https://www.runscope.com)), it will automatically retry. This might resolve the issue, in which case you're all set & can move on to [**After The Incident**](#after-the-incident) steps!
 
 If this wasn't cleared up by an automatic retry, it's time to figure out the severity of the issue:
 
@@ -27,9 +27,9 @@ Alright, so we know things are a lil' wonky. Let's see if we can find out why:
     1. We might have seen this error before & left ourselves some notes. Check the troubleshooting document for this application: [Phoenix](https://dosomething.github.io/communal-docs/Incidents/Phoenix), [GraphQL](https://dosomething.github.io/communal-docs/Incidents/GraphQL), [Northstar](https://dosomething.github.io/communal-docs/Incidents/Northstar), [Rogue](https://dosomething.github.io/communal-docs/Incidents/Rogue), [Gambit](https://dosomething.github.io/communal-docs/Incidents/Gambit), [Blink](https://dosomething.github.io/communal-docs/Incidents/Blink)
     2. If you see something spooky, like network timeouts, try [restarting the application](#restarting-the-application).
 8. Does this failure relate to a recent change or deploy?
-    1. If we changed content on a campaign (such as a closed campaign or new copy) and that's causing the failure, update the test to reflect that & re-run the test. If that resolves the incident, you're all set! Follow the steps in [After The Incident](#after-the-incident) to document this.
+    1. If we changed content on a campaign (such as a closed campaign or new copy) and that's causing the failure, update the test to reflect that & re-run the test. If that resolves the incident, you're all set! Follow the steps in [**After The Incident**](#after-the-incident) to document this.
     2. If this relates to a recent deploy, try [rolling back that deploy](#rolling-back-deploys) to the previous release. We can always fix the bug when we're back in the office.
-9. If the site is still broken, [**Escalate** the incident](#escalate-an-incident) to bring in a technical lead & continue to [During The Incident](#incident-response).
+9. If the site is still broken, it's time to bring in more help. Continue to [**During The Incident**](#incident-response), below.
 
 <br/>
 <br/>
@@ -43,11 +43,11 @@ Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 <br/>
 <br/>
 
-## During The Incident
+## During the incident...
 
-Now that you've confirmed this is a real issue, it's time to bring in some more help. [**Escalate** the incident](#escalate-an-incident) to bring in a technical lead, then [create the incident channel & notify staff](#create-the-incident-channel). This is where we'll discuss our troubleshooting efforts.
+Now that you've confirmed this is a real issue, it's time to bring in some more help. [**Escalate** the incident](#escalate-an-incident) to bring in a technical lead, then [create the incident channel & notify staff](#create-the-incident-channel). This is where we'll coordinate our troubleshooting efforts.
 
-As the first responder, your job is to coordinate our response – document troubleshooting steps & make sure everyone's on the same page. At this point, you may also want to bring in additional engineers with domain expertise on the failing system(s).
+As the first responder, your job is to organize our response – document troubleshooting steps we're taking & make sure everyone's on the same page. At this point, you may also want to bring in additional engineers with domain expertise on the failing system(s).
 
 <br/>
 <br/>
@@ -61,7 +61,7 @@ As the first responder, your job is to coordinate our response – document trou
 <br/>
 <br/>
 
-## After The Incident
+## After the incident...
 
 After the incident is resolved, add a ticket or comment to our ['Incidents' Pivotal board](https://www.pivotaltracker.com/n/projects/2459675). Each card on this board is a "type" of problem that could cause an incident, like "Test failures due to 503 First Byte Timeout". We use this to track trends, which we'll then discuss at our Monthly Post-Mortem meeting.
 

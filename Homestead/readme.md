@@ -20,12 +20,12 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [`v10.10.1` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
+Check out the [`v11.3.3` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v10.10.1
+$ git checkout v11.3.3
 ```
 
 #### Step 3: Configure Homestead
@@ -116,7 +116,7 @@ Finally, make one change to the `after.sh` file:
 # be run after the Homestead machine is provisioned.
 
 # Use "polling" rather than unsupported filesystem events for tools like Webpack:
-echo 'export CHOKIDAR_USEPOLLING=true' >> /home/vagrant/.bash_profile
+echo 'export CHOKIDAR_USEPOLLING=true' >> /home/vagrant/.bashrc
 
 # Install New Relic agent:
 sudo sh -c "echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' > /etc/apt/sources.list.d/newrelic.list"

@@ -48,4 +48,4 @@ Example:
 cat ../college-board.csv | heroku run php -d memory_limit=512M artisan rogue:groups-import --name="The College Board" --filterByLocation --app dosomething-rogue-dev --no-tty
 ```
 
-The `--no-tty` flag is needed for this to run successfully (TODO: figure out / document why)
+The `--no-tty` flag is needed for this to run successfully (see [this comment](https://github.com/heroku/legacy-cli/issues/1409#issuecomment-243140124) for details)

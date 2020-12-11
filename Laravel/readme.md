@@ -49,3 +49,12 @@ cat ../college-board.csv | heroku run php -d memory_limit=512M artisan rogue:gro
 ```
 
 The `--no-tty` flag is needed for this to run successfully (see [this comment](https://github.com/heroku/legacy-cli/issues/1409#issuecomment-243140124) for details)
+
+### Excel Files
+Excel saves CSV files with non-standard `\r` line endings (which were used by _old_ [Mac OS](https://en.wikipedia.org/wiki/Classic_Mac_OS)), rather than the `\n` line endings used by modern macOS and UNIX. This causes CSVs created by Excel to appear "empty" in many tools, including our Artisan scripts.
+
+You can re-write a broken file with the correct line endings using this Perl one-liner:
+
+```
+perl -p -i -e "s/\r/\n/g" broken-csv-file.csv
+```

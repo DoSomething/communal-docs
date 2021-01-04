@@ -4,12 +4,33 @@ We keep our [code open-source at DoSomething.org](https://github.com/dosomething
 
 ## Style Guide
 
-Most of our major projects use StyleCI to lint each commit to the repo.
+Most of our major projects use automated tools to help format the style of our code and check our code quality.
+
+StyleCI to lint each commit to the repo.
 
 ## PHP Code
-Imports are organized in line-length order.
+
+Some projects use [Prettier PHP Plugin](https://github.com/prettier/plugin-php) to automatically format the style of our code along with the [PHP CS Fixer tool](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to help with some formatting and with checking our code quality.
+
+Other projects use our legacy approach relying on [StyleCI](https://styleci.io/) to lint on each commit pushed to the respective code repository. (Note: we are still rolling out the new approach with Prettier & PHP CS Fixer on more of our projects).
+
+The aforementioned tools adhere mostly to rules specified in [PSR-2](https://www.php-fig.org/psr/psr-2/) with added rules to essentially follow [PSR-12](https://www.php-fig.org/psr/psr-12/), which is considered the new recommended standard.
+
+Some of these added rules include:
+
+- Imports are organized in alphabetical order (non-StyleCI linted projects).
+- Spaces surrounding the concatenation operator.
+- Aiming for line lengths of 80 characters.
+- Trailing comma in multi-line array.
+
+You can find most of the rules applied via Prettier's [options](https://prettier.io/docs/en/options.html) and the [ruleset](https://github.com/weerd/php-style/blob/master/src/rules/laravel-prettier.php) we use for the PHP CS Fixer tool.
+
+There is also a helpful, [interactive guide](https://mlocati.github.io/php-cs-fixer-configurator/), to inspect and better understand what specific rules do in PHPCS Fixer and whether they are part of an include set (e.g. [`@PSR2`](https://mlocati.github.io/php-cs-fixer-configurator/#version:2.16|fixerset:@PhpCsFixer) set includes a specific group of rules).
 
 ## JS Code
+
+Most of our projects that contain JavaScript code use [Prettier](https://prettier.io/) to automatically format the style of our code along with [ESLint](https://eslint.org/) to help with linting and checking our code quality.
+
 Imports are organized in ascending line-length order, with third-party package imports at the top of the file, followed by a line break and local project imports.
 
 e.g.:
@@ -19,9 +40,9 @@ import React from 'react';
 import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
 
-import Query from "../../../../Query";
-import ReferralsListItem from "./ReferralsListItem";
-import SectionHeader from "../../../../utilities/SectionHeader/SectionHeader";
+import Query from '../../../../Query';
+import ReferralsListItem from './ReferralsListItem';
+import SectionHeader from '../../../../utilities/SectionHeader/SectionHeader';
 ```
 
 ### Line Breaks
@@ -94,9 +115,10 @@ We also prefer to add a new line between HTML sibling elements to help visually 
 ```
 
 ### React Components
+
 Initially when rapidly developing [Phoenix](https://github.com/DoSomething/phoenix-next), we made some decisions on code file locations/hierarchy. Overtime we've come to refine this structure a bit, and are now working to update the Phoenix codebase with the latest decisions.
 
-We want to update our code directory structure within the `/components` directory to follow this pattern: 
+We want to update our code directory structure within the `/components` directory to follow this pattern:
 
 ```
 - /components
@@ -107,7 +129,7 @@ We want to update our code directory structure within the `/components` director
   |_ /utilities
 ```
 
-Most of the standalone components residing as children of the `/components` should fall within one of the above children directories. 
+Most of the standalone components residing as children of the `/components` should fall within one of the above children directories.
 
 - `/components/actions` contains dispatchers for different actions.
 - `/components/artifacts` contains small, non-logic based components typically used inside other components, like icons, close button, spinner, etc.
@@ -123,17 +145,17 @@ As we write multiple tests in a single file, we use a code comment `/** @test */
 
 ```js
 /** @test */
-it("should test something about this example component", () => {
+it('should test something about this example component', () => {
   // ...
 });
 
 /** @test */
-it("should test something else about this example component", () => {
+it('should test something else about this example component', () => {
   // ...
 });
 
 /** @test */
-it("should test another thing about this example component", () => {
+it('should test another thing about this example component', () => {
   // ...
 });
 ```
@@ -154,8 +176,8 @@ Example component:
 <MyComponent>
   {numberOfReferrals > 3 ? (
     <div
-      data-testid="additional-referrals-count"
-      className="text-center md:text-left md:pt-16"
+      data-testid='additional-referrals-count'
+      className='text-center md:text-left md:pt-16'
     >
       {`+ ${numberOfReferrals - 3} more`}
     </div>
@@ -166,13 +188,13 @@ Example component:
 Example Jest test utilizing testing-library utility:
 
 ```js
-import { screen } from "@testing-library/react";
+import { screen } from '@testing-library/react';
 
 /** @test */
-it("Should display additional referrals count", () => {
+it('Should display additional referrals count', () => {
   render(<MyComponent />);
 
-  const element = screen.getByTestId("additional-referrals-count");
+  const element = screen.getByTestId('additional-referrals-count');
   // ...
 });
 ```
@@ -181,8 +203,8 @@ Example Cypress test utilizing testing-library utility:
 
 ```js
 /** @test */
-it("Should display additional referrals count", () => {
-  cy.findByTestId("additional-referrals-count").contains("+ 2 more");
+it('Should display additional referrals count', () => {
+  cy.findByTestId('additional-referrals-count').contains('+ 2 more');
 });
 ```
 
@@ -190,10 +212,11 @@ it("Should display additional referrals count", () => {
 
 ## CSS Code
 
+Most of our projects that contain JavaScript code use [Prettier](https://prettier.io/) to automatically format the style of our CSS/SCSS code.
+
 We use the [Tailwind CSS Framework](https://tailwindcss.com/) on our user and admin interfaces [to help simplify](https://github.com/DoSomething/rfcs/blob/master/005-tailwindcss-framework.md) front-end development across our team.
 
 For translating spacing scale using Tailwind, there's a [handy reference](https://tailwindcss.com/docs/customizing-spacing/#default-spacing-scale).
-
 
 ## Assets
 

@@ -7,7 +7,8 @@ We keep our [code open-source at DoSomething.org](https://github.com/dosomething
 Most of our major projects use StyleCI to lint each commit to the repo.
 
 ## PHP Code
-Imports are organized in line-length order.
+
+Imports are organized in alphabetical order.
 
 ## JS Code
 Imports are organized in ascending line-length order, with third-party package imports at the top of the file, followed by a line break and local project imports.

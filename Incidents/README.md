@@ -21,8 +21,8 @@ If this wasn't cleared up by an automatic retry, it's time to figure out the sev
 
 Alright, so we know things are a lil' wonky. Let's see if we can find out why:
 
-6. Could this be an external issue? It may be something outside of our control. Check the status pages for our providers: [AWS Status](https://status.aws.amazon.com), [Heroku Status](https://status.heroku.com), [Apollo Status](http://status.apollographql.com), and [MongoDB Status](https://status.cloud.mongodb.com).
-    1. If one of these services are unhealthy, note it on the incident & continue down the checklist.
+6. Could this be an external issue? It may be something outside of our control. Check the status pages for our providers: [AWS Status](https://status.aws.amazon.com), [Heroku Status](https://status.heroku.com), [Apollo Status](http://status.apollographql.com), [Fastly Status](https://status.fastly.com), [Contentful Status](https://www.contentfulstatus.com) and [MongoDB Status](https://status.cloud.mongodb.com).
+   1. If one of these services are unhealthy, note it on the incident & continue down the checklist.
 7. Look at the [application logs](#application-logs) and [error analytics](#error-analytics) for this application – does anything seem unusual?
     1. We might have seen this error before & left ourselves some notes. Check the troubleshooting document for this application: [Phoenix](https://dosomething.github.io/communal-docs/Incidents/Phoenix), [GraphQL](https://dosomething.github.io/communal-docs/Incidents/GraphQL), [Northstar](https://dosomething.github.io/communal-docs/Incidents/Northstar), [Rogue](https://dosomething.github.io/communal-docs/Incidents/Rogue), [Gambit](https://dosomething.github.io/communal-docs/Incidents/Gambit), [Blink](https://dosomething.github.io/communal-docs/Incidents/Blink)
     2. If you see something spooky, like network timeouts, try [restarting the application](#restarting-the-application).

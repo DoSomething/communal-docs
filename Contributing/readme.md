@@ -11,14 +11,15 @@ Most of our major projects use StyleCI to lint each commit to the repo.
 Imports are organized in alphabetical order.
 
 ## JS Code
+
 Imports are organized in ascending line-length order, with third-party package imports at the top of the file, followed by a line break and local project imports.
 
 e.g.:
 
 ```js
-import React from 'react';
-import gql from 'graphql-tag';
-import PropTypes from 'prop-types';
+import React from "react";
+import gql from "graphql-tag";
+import PropTypes from "prop-types";
 
 import Query from "../../../../Query";
 import ReferralsListItem from "./ReferralsListItem";
@@ -95,9 +96,10 @@ We also prefer to add a new line between HTML sibling elements to help visually 
 ```
 
 ### React Components
+
 Initially when rapidly developing [Phoenix](https://github.com/DoSomething/phoenix-next), we made some decisions on code file locations/hierarchy. Overtime we've come to refine this structure a bit, and are now working to update the Phoenix codebase with the latest decisions.
 
-We want to update our code directory structure within the `/components` directory to follow this pattern: 
+We want to update our code directory structure within the `/components` directory to follow this pattern:
 
 ```
 - /components
@@ -108,7 +110,7 @@ We want to update our code directory structure within the `/components` director
   |_ /utilities
 ```
 
-Most of the standalone components residing as children of the `/components` should fall within one of the above children directories. 
+Most of the standalone components residing as children of the `/components` should fall within one of the above children directories.
 
 - `/components/actions` contains dispatchers for different actions.
 - `/components/artifacts` contains small, non-logic based components typically used inside other components, like icons, close button, spinner, etc.
@@ -194,7 +196,6 @@ it("Should display additional referrals count", () => {
 We use the [Tailwind CSS Framework](https://tailwindcss.com/) on our user and admin interfaces [to help simplify](https://github.com/DoSomething/rfcs/blob/master/005-tailwindcss-framework.md) front-end development across our team.
 
 For translating spacing scale using Tailwind, there's a [handy reference](https://tailwindcss.com/docs/customizing-spacing/#default-spacing-scale).
-
 
 ## Assets
 

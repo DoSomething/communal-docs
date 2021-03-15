@@ -122,6 +122,7 @@ sudo update-alternatives --set phpize /usr/bin/phpize7.4
 
 # Set 10MB nginx upload limit:
 echo 'client_max_body_size 10M;' >> /home/vagrant/.config/nginx/nginx.conf
+sudo systemctl restart nginx.service
 
 # Use "polling" rather than unsupported filesystem events for tools like Webpack:
 echo 'export CHOKIDAR_USEPOLLING=true' >> /home/vagrant/.bashrc

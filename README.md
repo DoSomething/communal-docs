@@ -20,4 +20,6 @@ Simply link to a specified documentation file in this repository from another Do
 
 - [Automated Tests](https://github.com/DoSomething/communal-docs/tree/master/Automated%20Tests)
 
+- [Contributing](https://github.com/DoSomething/communal-docs/tree/main/Contributing)
+
 <p align="center">© DoSomething.org.</p>

@@ -20,12 +20,12 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [`v10.10.1` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
+Check out the [`v12.1.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v10.10.1
+$ git checkout v12.1.0
 ```
 
 #### Step 3: Configure Homestead
@@ -115,8 +115,17 @@ Finally, make one change to the `after.sh` file:
 # add any commands you wish to this file and they will
 # be run after the Homestead machine is provisioned.
 
+# Default to PHP 7.4 CLI:
+sudo update-alternatives --set php /usr/bin/php7.4
+sudo update-alternatives --set php-config /usr/bin/php-config7.4
+sudo update-alternatives --set phpize /usr/bin/phpize7.4
+
+# Set 10MB nginx upload limit:
+echo 'client_max_body_size 10M;' >> /home/vagrant/.config/nginx/nginx.conf
+sudo systemctl restart nginx.service
+
 # Use "polling" rather than unsupported filesystem events for tools like Webpack:
-echo 'export CHOKIDAR_USEPOLLING=true' >> /home/vagrant/.bash_profile
+echo 'export CHOKIDAR_USEPOLLING=true' >> /home/vagrant/.bashrc
 
 # Install New Relic agent:
 sudo sh -c "echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' > /etc/apt/sources.list.d/newrelic.list"

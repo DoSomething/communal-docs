@@ -61,6 +61,7 @@ features:
 folders:
     - map: ~/Code
       to: /home/vagrant/Code
+      type: "nfs"
 
 # Configure which Laravel applications you are running,
 # and where their "public" directory can be found. Make

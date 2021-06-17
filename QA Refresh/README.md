@@ -10,7 +10,7 @@ We automatically refresh data data every Sunday at midnight, using the following
 H 0 * * 7
 ```
 
-You can disable automatic refreshes by unchecking the "build periodically" trigger on this job. Don't forget to turn them back on!
+You can disable automatic refreshes by unchecking the "build periodically" trigger on this job. Don't forget to turn it back on later!
 
 (See this [StackOverflow answer](https://stackoverflow.com/a/12472740) for more details on how this syntax works.)
 

@@ -1,0 +1,9 @@
+name: communal-docs
+
+theme: jekyll-theme-primer
+title: false
+
+markdown: GFM
+
+plugins:
+  - jemoji

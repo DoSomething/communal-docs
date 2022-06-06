@@ -9,7 +9,7 @@ _Here's a "quick start" guide to using Homestead. Refer to the [official documen
 ## Installation
 
 #### Step 1: Install VirtualBox & Vagrant
-Download and install the latest version of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [Vagrant](https://www.vagrantup.com/downloads.html).
+Download and install the latest version of [VirtualBox 6.x](https://www.virtualbox.org/wiki/Downloads) & [Vagrant](https://www.vagrantup.com/downloads.html).
 
 #### Step 2: Install Homestead
 To install Homestead, first clone the [repository](https://github.com/laravel/homestead) to wherever you store your source code (or any other location of your choice). These instructions assume you're storing your projects in `~/Code`.
@@ -20,12 +20,12 @@ $ cd ~/Code
 $ git clone git@github.com:laravel/homestead.git homestead
 ```
 
-Check out the [`v7.17.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
+Check out the [`v12.1.0` tag](https://github.com/laravel/homestead/releases) of Homestead. We'll periodically test newer releases and update these directions.
 
 ```shell
 $ cd ~/Code/homestead
 
-$ git checkout v7.17.0
+$ git checkout v12.1.0
 ```
 
 #### Step 3: Configure Homestead
@@ -34,7 +34,7 @@ Next, run the `bash init.sh` command from within the Homestead directory, which 
 You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix Next](https://github.com/dosomething/phoenix-next):
 
 ```yaml
-  ---
+---
 ip: "192.168.10.10"
 memory: 2048
 cpus: 1
@@ -45,9 +45,10 @@ authorize: ~/.ssh/id_rsa.pub
 keys:
     - ~/.ssh/id_rsa
 
-# Install MongoDB. If you're not working on
-# Northstar, you can set this to `false`.
-mongodb: true
+# Install MongoDB & MariaDB.
+features:
+    - mongodb: true
+    - mariadb: true
 
 # Configure which folders on your local machine
 # are accessible on the Homestead VM. This should
@@ -60,6 +61,7 @@ mongodb: true
 folders:
     - map: ~/Code
       to: /home/vagrant/Code
+      type: "nfs"
 
 # Configure which Laravel applications you are running,
 # and where their "public" directory can be found. Make
@@ -68,25 +70,22 @@ folders:
 sites:
     - map: northstar.test
       to: /home/vagrant/Code/northstar/public
-      php: "7.2"
+      php: "7.4"
 
     - map: phoenix.test
       to: /home/vagrant/Code/phoenix-next/public
-      php: "7.2"
+      php: "7.4"
 
 # These databases will automatically be created by
 # Homestead when provisioning your virtual machine.
 databases:
+    - aurora
+    - chompy
+    - chompy_test
     - phoenix
     - phoenix_test
     - northstar
     - northstar_test
-
-# blackfire:
-#     - id: foo
-#       token: bar
-#       client-id: foo
-#       client-token: bar
 
 # ports:
 #     - send: 50000
@@ -105,10 +104,24 @@ Finally, make one change to the `after.sh` file:
 # add any commands you wish to this file and they will
 # be run after the Homestead machine is provisioned.
 
-# Switch to PHP 7.2 for the default CLI.
-sudo update-alternatives --set php /usr/bin/php7.2
-sudo update-alternatives --set php-config /usr/bin/php-config7.2
-sudo update-alternatives --set phpize /usr/bin/phpize7.2
+# Default to PHP 7.4 CLI:
+sudo update-alternatives --set php /usr/bin/php7.4
+sudo update-alternatives --set php-config /usr/bin/php-config7.4
+sudo update-alternatives --set phpize /usr/bin/phpize7.4
+
+# Set 10MB nginx upload limit:
+echo 'client_max_body_size 10M;' >> /home/vagrant/.config/nginx/nginx.conf
+sudo systemctl restart nginx.service
+
+# Use "polling" rather than unsupported filesystem events for tools like Webpack:
+echo 'export CHOKIDAR_USEPOLLING=true' >> /home/vagrant/.bashrc
+
+# Install New Relic agent:
+sudo sh -c "echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' > /etc/apt/sources.list.d/newrelic.list"
+wget -O- https://download.newrelic.com/548C16BF.gpg | sudo apt-key add -
+sudo apt-get update
+
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install newrelic-php5
 ```
 
 #### Step 4: Configure /etc/hosts
@@ -136,7 +149,11 @@ Make sure that the IP specified (e.g. `192.168.10.10 phoenix.test`) matches the 
 
 #### Step 5: Let's do this!
 
-You should be ready to go! Follow the per-project installation instructions in each README file to install Composer dependencies, run database migrations, and build any front-end assets. Each of your sites should now be accessible in a web browser, like [http://phoenix.test](http://phoenix.test)! Have fun! :sparkles:
+You should be ready to go! 
+
+If this is your first time working on an application, head over to the project directory within your Homestead box (following the "Daily Usage" instructions below) and follow the project's installation instructions in its README file to install dependencies, run database migrations, and build any front-end assets.
+
+Each of your sites should now be accessible in a web browser, like [http://phoenix.test](http://phoenix.test)! Have fun! :sparkles:
 
 
 ## Daily Usage
@@ -144,7 +161,16 @@ You can start your virtual machine from the `~/Code/homestead` directory you cre
 
 ```shell
 $ cd ~/Code/homestead
+
+# To start your Homestead box:
 $ vagrant up
+
+# To SSH into your Vagrant box (for running commands
+# like `composer` or `php artisan`):
+$ vagrant ssh
+
+# To stop your Homestead box:
+$ vagrant stop
 ```
 
 If you've made any changes to your `Homestead.yaml` file, Vagrant will automatically make the corresponding changes on your virtual machine. You can also do this by running `vagrant provision` from this directory at any time.
@@ -168,6 +194,11 @@ Make sure the path to the homestead repository (`~/Code/homestead`) matches the 
 
 You can now run `homestead up`, `homestead ssh` or `homestead halt` from anywhere!
 
+## Contributing
+
+Be sure to commit changes to each repository from outside of your vagrant box, so your Github user will be the author (not `vagrant`).
+
+Follow [these steps](https://help.github.com/en/articles/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer) to set your Github username for every repository.
 
 ## Troubleshooting
 If you encounter any issues while installing & using Homestead, refer to the [troubleshooting guide](troubleshooting.md).

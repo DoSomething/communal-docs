@@ -31,7 +31,7 @@ $ git checkout v12.1.0
 #### Step 3: Configure Homestead
 Next, run the `bash init.sh` command from within the Homestead directory, which will create the `Homestead.yaml` configuration file & `after.sh` shell script.
 
-You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix](https://github.com/dosomething/phoenix-next), [Rogue](https://github.com/dosomething/rogue), [Aurora](https://github.com/dosomething/aurora), and [Chompy](https://github.com/dosomething/chompy):
+You can use the `Homestead.yaml` file to configure which sites run in your Homestead environment. Here's an example, configured for working on [Northstar](https://github.com/dosomething/northstar), [Phoenix Next](https://github.com/dosomething/phoenix-next):
 
 ```yaml
 ---
@@ -68,10 +68,6 @@ folders:
 # sure the 'to' path begins with one of the folders
 # you linked above.
 sites:
-    - map: aurora.test
-      to: /home/vagrant/Code/aurora/public
-      php: "7.4"
-
     - map: northstar.test
       to: /home/vagrant/Code/northstar/public
       php: "7.4"
@@ -79,25 +75,14 @@ sites:
     - map: phoenix.test
       to: /home/vagrant/Code/phoenix-next/public
       php: "7.4"
-    
-    - map: rogue.test
-      to: /home/vagrant/Code/rogue/public
-      php: "7.4"
-      
-    - map: chompy.test
-      to: /home/vagrant/Code/chompy/public
-      php: "7.4"
 
 # These databases will automatically be created by
 # Homestead when provisioning your virtual machine.
 databases:
-    - aurora
-    - chompy
-    - chompy_test
     - phoenix
     - phoenix_test
-    - rogue
-    - rogue_test
+    - northstar
+    - northstar_test
 
 # ports:
 #     - send: 50000
@@ -152,11 +137,8 @@ For each of the sites specified in the `Homestead.yaml` file, you need to add th
 
 
 # Homestead Projects
-192.168.10.10 aurora.test
 192.168.10.10 northstar.test
 192.168.10.10 phoenix.test
-192.168.10.10 rogue.test
-192.168.10.10 chompy.test
 ```
 
 Make sure that the IP specified (e.g. `192.168.10.10 phoenix.test`) matches the `ip` key in the `Homestead.yaml` file!

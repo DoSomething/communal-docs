@@ -12,7 +12,7 @@ _Here's a "quick start" guide to using Homestead. Refer to the [official documen
 Download and install the latest version of [VirtualBox 6.x](https://www.virtualbox.org/wiki/Downloads) & [Vagrant](https://www.vagrantup.com/downloads.html).
 
 #### Step 2: Install Homestead
-To install Homestead, first clone the [repository](https://github.com/laravel/homestead) to wherever you store your source code (or any other location of your choice). These instructions assume you're storing your projects in `~/Code`, assume you've created a machine SSH key and have set your SSH config according to DoSomething's internal convensions (see: DoSomething internal SSH Host Conventions doc in Engineering Onboarding).
+To install Homestead, first clone the [repository](https://github.com/laravel/homestead) to wherever you store your source code (or any other location of your choice). These instructions assume you're storing your projects in `~/Code`.
 
 ```shell
 $ cd ~/Code

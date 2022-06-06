@@ -79,9 +79,6 @@ sites:
 # These databases will automatically be created by
 # Homestead when provisioning your virtual machine.
 databases:
-    - aurora
-    - chompy
-    - chompy_test
     - phoenix
     - phoenix_test
     - northstar
